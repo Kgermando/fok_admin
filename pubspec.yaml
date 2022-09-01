@@ -1,0 +1,104 @@
+name: fokad_admin
+description: A new Flutter project.
+
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+version: 2.0.0+1
+
+environment:
+  sdk: ">=2.17.1 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations: # Add this line
+    sdk: flutter  # Add this line
+  
+  http: ^0.13.4 
+  dio: ^4.0.6
+  provider: ^6.0.2
+  url_strategy: ^0.2.0
+  url_launcher: ^6.0.18
+  google_fonts: ^3.0.1
+  auto_size_text: ^3.0.0
+  animated_text_kit: ^4.2.1
+  intl: ^0.17.0
+  syncfusion_flutter_charts: ^20.1.56
+  syncfusion_flutter_datagrid_export: ^20.1.57-beta
+  syncfusion_flutter_barcodes: ^20.1.57
+  syncfusion_flutter_calendar: ^20.1.56
+  syncfusion_flutter_pdfviewer: ^20.1.58-beta
+  pluto_grid: ^5.0.4
+  timeago: ^3.2.2
+  shared_preferences: ^2.0.15
+  badges: ^2.0.2
+  simple_speed_dial: ^0.1.3
+  flutter_secure_storage: ^5.0.2
+  date_time_picker: ^2.1.0
+  flutter_switch: ^0.3.2
+  flutter_staggered_grid_view: ^0.6.1
+  flash_card: ^0.0.7
+  pdf: ^3.8.0 
+  open_file: ^3.2.1
+  path_provider: ^2.0.10
+  path_provider_platform_interface: ^2.0.4
+  flutter_phoenix: ^1.0.0
+  dospace: ^0.13.15
+  file_picker: ^4.6.1
+  extended_image: ^6.2.1
+  excel: ^2.0.0-null-safety-3
+  easy_autocomplete: ^1.6.0
+  easy_table: ^2.0.1
+  flutter_slidable: ^2.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+  flutter_lints: ^2.0.0
+  msix: ^3.6.3
+
+msix_config:
+  display_name: FOKAD Plateform
+  publisher_display_name: FOKAD
+  identity_name: com.eventdrcTechnology.fokad
+  msix_version: 2.0.0.1
+  certificate_path: C:\Users\K-GERMANDO\Documents\DEVELOPER\FLUTTER\CERTIFICAT\fokad\CERTIFICATEFOKAD.pfx
+  certificate_password: gk0813530838
+  # publisher: CN=Germain kataku, O=Eventdrc Technology
+  logo_path: C:\Users\K-GERMANDO\Documents\DEVELOPER\FLUTTER\PROJECT\fokad_admin\assets\images\logo.png
+  start_menu_icon_path: C:\Users\K-GERMANDO\Documents\DEVELOPER\FLUTTER\PROJECT\fokad_admin\assets\images\logo.png
+  tile_icon_path: C:\Users\K-GERMANDO\Documents\DEVELOPER\FLUTTER\PROJECT\fokad_admin\assets\images\logo.png
+  # vs_generated_images_folder_path: C:\<PathToFolder>\icons
+  icons_background_color: '#ffffff'
+  architecture: x64
+  capabilities: 'internetClient,location,microphone,webcam'
+
+# The following section is specific to Flutter packages.
+flutter:
+  # the material Icons class.
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/images/
+
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Regular.ttf
+        - asset: assets/fonts/Poppins-Italic.ttf
+          style: italic  

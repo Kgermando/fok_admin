@@ -91,7 +91,7 @@ class _TableActionnaireState extends State<TableActionnaire> {
         ),
         const SizedBox(height: p20),
         SizedBox(
-          height: MediaQuery.of(context).size.height / 2,
+          height: MediaQuery.of(context).size.height / 1.5,
           child: PlutoGrid(
             columns: columns,
             rows: rows,

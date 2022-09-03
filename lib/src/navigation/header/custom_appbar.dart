@@ -39,6 +39,9 @@ class CustomAppbar extends StatefulWidget {
 
 class _CustomAppbarState extends State<CustomAppbar> {
   String isUpdateVersion = InfoSystem().version();
+  double sumVersion = 0.0;
+  double sumVersionCloud = 0.0; // Version mis en ligne
+
   Timer? timer;
   int tacheCount = 0;
   int cartCount = 0;
@@ -53,8 +56,16 @@ class _CustomAppbarState extends State<CustomAppbar> {
     timer = Timer.periodic(const Duration(seconds: 5), (timer) {
       getData();
     });
-    // getUpdate();
+
+    getVersion();
+
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    timer!.cancel();
+    super.dispose();
   }
 
   List<UpdateModel> updateVersionList = [];
@@ -74,7 +85,29 @@ class _CustomAppbarState extends State<CustomAppbar> {
         mailsCount = mailsCountNotify.count;
         updateVersionList = updateVersions
             .where((element) => element.isActive == "true")
+            .toList(); 
+      });
+    }
+  }
+
+  Future<void> getVersion() async {
+    var updateVersions = await UpdateVersionApi().getAllData();
+    if (mounted) {
+      setState(() {
+        var isUpdateVersionCloud = updateVersions
+            .where((element) => element.isActive == "true")
             .toList();
+        // Version actuel
+        var isVersion = isUpdateVersion.split('.');
+        for (var e in isVersion) {
+          sumVersion += double.parse(e);
+        }
+
+        // Version Cloud
+        var isVersionCloud = isUpdateVersionCloud.last.version.split('.');
+        for (var e in isVersionCloud) {
+          sumVersionCloud += double.parse(e);
+        }
       });
     }
   }
@@ -130,7 +163,7 @@ class _CustomAppbarState extends State<CustomAppbar> {
             const Spacer(),
             if (Platform.isWindows &&
                 updateVersionList.isNotEmpty &&
-                updateVersionList.last.version != isUpdateVersion)
+                sumVersionCloud > sumVersion)
               IconButton(
                   iconSize: 40,
                   tooltip: 'Téléchargement',

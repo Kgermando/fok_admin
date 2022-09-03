@@ -37,6 +37,7 @@ class CustomAppbar extends StatefulWidget {
 }
 
 class _CustomAppbarState extends State<CustomAppbar> {
+  String isUpdateVersion = "2.0.0.3";
   Timer? timer;
   int tacheCount = 0;
   int cartCount = 0;
@@ -126,7 +127,9 @@ class _CustomAppbarState extends State<CustomAppbar> {
               ),
             HeaderItem(title: widget.title),
             const Spacer(),
-            if (Platform.isWindows && updateVersionList.isNotEmpty)
+            if (Platform.isWindows &&
+                updateVersionList.isNotEmpty &&
+                updateVersionList.last.version != isUpdateVersion)
               IconButton(
                   iconSize: 40,
                   tooltip: 'Téléchargement',

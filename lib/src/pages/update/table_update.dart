@@ -64,7 +64,7 @@ class _TableUpdateState extends State<TableUpdate> {
             ClassFilterImplemented(),
           ],
           resolveDefaultColumnFilter: (column, resolver) {
-            if (column.field == 'id') {
+            if (column.field == 'created') {
               return resolver<ClassFilterImplemented>() as PlutoFilterType;
             } else if (column.field == 'version') {
               return resolver<ClassFilterImplemented>() as PlutoFilterType;
@@ -72,7 +72,7 @@ class _TableUpdateState extends State<TableUpdate> {
               return resolver<ClassFilterImplemented>() as PlutoFilterType;
             } else if (column.field == 'isActive') {
               return resolver<ClassFilterImplemented>() as PlutoFilterType;
-            } else if (column.field == 'created') {
+            } else if (column.field == 'motif') {
               return resolver<ClassFilterImplemented>() as PlutoFilterType;
             }
             return resolver<PlutoFilterTypeContains>() as PlutoFilterType;
@@ -86,15 +86,15 @@ class _TableUpdateState extends State<TableUpdate> {
     columns = [
       PlutoColumn(
         readOnly: true,
-        title: 'Id',
-        field: 'id',
-        type: PlutoColumnType.number(),
+        title: 'Date',
+        field: 'created',
+        type: PlutoColumnType.date(),
         enableRowDrag: true,
         enableContextMenu: false,
         enableDropToResize: true,
         titleTextAlign: PlutoColumnTextAlign.left,
-        width: 100,
-        minWidth: 80,
+        width: 200,
+        minWidth: 150,
       ),
       PlutoColumn(
         readOnly: true,
@@ -134,14 +134,14 @@ class _TableUpdateState extends State<TableUpdate> {
       ),
       PlutoColumn(
         readOnly: true,
-        title: 'Date',
-        field: 'created',
-        type: PlutoColumnType.date(),
+        title: 'Motif',
+        field: 'motif',
+        type: PlutoColumnType.text(),
         enableRowDrag: true,
         enableContextMenu: false,
         enableDropToResize: true,
         titleTextAlign: PlutoColumnTextAlign.left,
-        width: 200,
+        width: 150,
         minWidth: 150,
       ),
     ];
@@ -154,12 +154,12 @@ class _TableUpdateState extends State<TableUpdate> {
       setState(() {
         for (var item in updateList) {
           rows.add(PlutoRow(cells: {
-            'id': PlutoCell(value: item.id),
-            'version': PlutoCell(value: item.version),
-            'urlUpdate': PlutoCell(value: item.urlUpdate),
-            'isActive': PlutoCell(value: item.isActive),
             'created': PlutoCell(
                 value: DateFormat("dd-MM-yyyy HH:mm").format(item.created)),
+            'version': PlutoCell(value: item.version),
+            'urlUpdate': PlutoCell(value: item.urlUpdate),
+            'isActive': PlutoCell(value: item.isActive), 
+            'motif': PlutoCell(value: item.motif),
           }));
           stateManager!.resetCurrentState();
         }

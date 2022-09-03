@@ -18,6 +18,12 @@ class UpdatePage extends StatefulWidget {
 class _UpdatePageState extends State<UpdatePage> {
   final GlobalKey<ScaffoldState> _key = GlobalKey();
 
+  @override
+  void initState() {
+    getData();
+    super.initState();
+  }
+
   UserModel user = UserModel(
       nom: '-',
       prenom: '-',

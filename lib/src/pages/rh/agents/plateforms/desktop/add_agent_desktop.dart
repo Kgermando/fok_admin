@@ -1044,8 +1044,7 @@ class _AddAgentDesktopState extends State<AddAgentDesktop> {
         });
   }
 
-  Future submit() async {
-    print("Img $uploadedFileUrl");
+  Future submit() async { 
     final agentModel = AgentModel(
         nom: (nomController.text == '') ? '-' : nomController.text,
         postNom: (postNomController.text == '') ? '-' : postNomController.text,

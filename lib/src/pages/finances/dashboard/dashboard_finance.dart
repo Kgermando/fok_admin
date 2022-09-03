@@ -169,14 +169,16 @@ class _DashboardFinanceState extends State<DashboardFinance> {
           depenseFinanceExterieur += double.parse(item!.montant);
         }
 
-        soldeBanque = recetteBanque - depensesBanque;
-        soldeCaisse = recetteCaisse - depensesCaisse;
         soldeCreance = nonPayesCreance - creancePaiement;
         soldeDette = nonPayesDette - detteRemboursement;
-        soldeFinExterieur = recetteFinanceExterieur + depenseFinanceExterieur;
 
-        cumulFinanceExterieur = actionnaire + soldeFinExterieur;
+        soldeBanque = recetteBanque - depensesBanque;
+        soldeCaisse = recetteCaisse - depensesCaisse;
+        soldeFinExterieur = recetteFinanceExterieur - depenseFinanceExterieur;
+
+        cumulFinanceExterieur = actionnaire + soldeFinExterieur;  
         depenses = depensesBanque + depensesCaisse + depenseFinanceExterieur;
+        disponible = soldeBanque + soldeCaisse + cumulFinanceExterieur; // Montant disponible
       });
     }
   }

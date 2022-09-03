@@ -28,6 +28,7 @@ class _AddUpdateState extends State<AddUpdate> {
   bool isLoading = false;
 
   TextEditingController versionController = TextEditingController();
+  TextEditingController motifController = TextEditingController();
 
   bool isUploading = false;
   bool isUploadingDone = false;
@@ -64,6 +65,7 @@ class _AddUpdateState extends State<AddUpdate> {
   @override
   void dispose() {
     versionController.dispose();
+    motifController.dispose();
     super.dispose();
   }
 
@@ -139,6 +141,7 @@ class _AddUpdateState extends State<AddUpdate> {
                       height: p20,
                     ),
                     versionWidget(),
+                    motifWidget(),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
@@ -189,6 +192,27 @@ class _AddUpdateState extends State<AddUpdate> {
         ));
   }
 
+    Widget motifWidget() {
+    return Container(
+      margin: const EdgeInsets.only(bottom: p20),
+      child: TextFormField(
+        controller: motifController,
+        decoration: InputDecoration(
+          border:
+              OutlineInputBorder(borderRadius: BorderRadius.circular(10.0)),
+          labelText: "Motif",
+        ),
+        keyboardType: TextInputType.text,
+        validator: (value) {
+          if (value != null && value.isEmpty) {
+            return 'Ce champs est obligatoire';
+          } else {
+            return null;
+          }
+        },
+      ));
+  }
+
   Widget fichierWidget() {
     return Container(
         margin: const EdgeInsets.only(bottom: p20),
@@ -226,10 +250,12 @@ class _AddUpdateState extends State<AddUpdate> {
 
   Future<void> submit() async {
     final updateVersion = UpdateModel(
-        version: versionController.text,
-        urlUpdate: (uploadedFileUrl == '') ? '-' : uploadedFileUrl.toString(),
-        isActive: 'false',
-        created: DateTime.now());
+      version: versionController.text,
+      urlUpdate: (uploadedFileUrl == '') ? '-' : uploadedFileUrl.toString(),
+      created: DateTime.now(),
+      isActive: 'false',
+      motif: motifController.text,
+    );
     await UpdateVersionApi().insertData(updateVersion).then((value) {
       Navigator.pop(context);
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(

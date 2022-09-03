@@ -219,6 +219,25 @@ class _ProfilPageState extends State<ProfilPage> {
             child: Row(
               children: [
                 Expanded(
+                    child: AutoSizeText('Email',
+                        maxLines: 2,
+                        style:
+                            bodyLarge.copyWith(fontWeight: FontWeight.bold))),
+                const SizedBox(width: p20),
+                Expanded(
+                    child: AutoSizeText(userModel.email,
+                        maxLines: 2, style: bodyLarge))
+              ],
+            ),
+          ),
+        ),
+        Card(
+          elevation: 10,
+          child: Padding(
+            padding: const EdgeInsets.all(p20),
+            child: Row(
+              children: [
+                Expanded(
                     child: AutoSizeText('Département',
                         maxLines: 2,
                         style:

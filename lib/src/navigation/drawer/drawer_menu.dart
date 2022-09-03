@@ -68,39 +68,49 @@ class _DrawerMenuState extends State<DrawerMenu> {
                       width: 100,
                       height: 100,
                     )),
-                    if (user.departement == 'Administration')
+                    if (user.departement == 'Administration' ||
+                        user.departement == 'Support')
                       if (pageCurrente != null)
                         AdministrationNav(
                             pageCurrente: pageCurrente, user: user),
                     if (user.departement == 'Ressources Humaines' ||
-                        user.departement == 'Administration')
+                        user.departement == 'Administration' ||
+                        user.departement == 'Support')
                       if (pageCurrente != null)
                         RhNav(pageCurrente: pageCurrente, user: user),
                     if (user.departement == 'Budgets' ||
-                        user.departement == 'Administration')
+                        user.departement == 'Administration' ||
+                        user.departement == 'Support')
                       if (pageCurrente != null)
                         BudgetNav(pageCurrente: pageCurrente, user: user),
                     if (user.departement == 'Finances' ||
-                        user.departement == 'Administration')
+                        user.departement == 'Administration' ||
+                        user.departement == 'Support')
                       if (pageCurrente != null)
                         FinancesNav(pageCurrente: pageCurrente, user: user),
                     if (user.departement == 'Comptabilites' ||
-                        user.departement == 'Administration')
+                        user.departement == 'Administration' ||
+                        user.departement == 'Support')
                       if (pageCurrente != null)
                         ComptabiliteNav(pageCurrente: pageCurrente, user: user),
                     if (user.departement == 'Exploitations' ||
-                        user.departement == 'Administration')
+                        user.departement == 'Administration' ||
+                        user.departement == 'Support')
                       if (pageCurrente != null)
                         ExploitationNav(pageCurrente: pageCurrente, user: user),
                     if (user.departement == 'Commercial et Marketing' ||
-                        user.departement == 'Administration')
+                        user.departement == 'Administration' ||
+                        user.departement == 'Support')
                       if (pageCurrente != null)
                         ComMarketing(pageCurrente: pageCurrente, user: user),
                     if (user.departement == 'Logistique' ||
-                        user.departement == 'Administration')
+                        user.departement == 'Administration' ||
+                        user.departement == 'Support')
                       if (pageCurrente != null)
                         LogistiqueNav(pageCurrente: pageCurrente, user: user),
-                    if (user.departement == 'Actionnaire')
+                    if (user.departement == 'Actionnaire' ||
+                        user.departement == 'Administration' ||
+                        user.departement == 'Support')
                       if (pageCurrente != null)
                         ActionnaireNav(pageCurrente: pageCurrente, user: user),
                     if (userRole <= 1)

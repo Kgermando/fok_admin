@@ -104,7 +104,7 @@ class AuthApi extends ChangeNotifier {
     }
     var userIdUrl = Uri.parse("$mainUrl/user/$id");
     var resp = await client.get(userIdUrl, headers: header);
-    if (resp.statusCode == 200) {
+    if (resp.statusCode == 200) { 
       return UserModel.fromJson(json.decode(resp.body));
     } else if (resp.statusCode == 404) {
       return UserModel(

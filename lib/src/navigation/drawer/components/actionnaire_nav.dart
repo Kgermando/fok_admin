@@ -24,8 +24,8 @@ class _ActionnaireNavState extends State<ActionnaireNav> {
     final bodyText1 = Theme.of(context).textTheme.bodyText1;
     int userRole = int.parse(widget.user.role);
     return ExpansionTile(
-      leading: const Icon(Icons.group, size: 30.0),
-      title: AutoSizeText('RH', maxLines: 1, style: bodyLarge),
+      leading: const Icon(Icons.groups, size: 30.0),
+      title: AutoSizeText('Actionnaire', maxLines: 1, style: bodyLarge),
       initiallyExpanded:
           (widget.user.departement == 'Actionnaire') ? true : false,
       onExpansionChanged: (val) {
@@ -52,11 +52,10 @@ class _ActionnaireNavState extends State<ActionnaireNav> {
             selected: widget.pageCurrente == ActionnaireRoute.actionnairePage,
             icon: Icons.savings,
             sizeIcon: 20.0,
-            title: 'Cotisations',
+            title: 'Côtisations',
             style: bodyText1!,
             onTap: () {
               Navigator.pushNamed(context, ActionnaireRoute.actionnairePage);
-              // Navigator.of(context).pop();
             }),
       ],
     );

@@ -134,6 +134,15 @@ class _AddAutreFinState extends State<AddAutreFin> {
   }
 
   Widget addPageWidget() {
+    double width = MediaQuery.of(context).size.width;
+    if (MediaQuery.of(context).size.width >= 1100) {
+      width = MediaQuery.of(context).size.width / 2;
+    } else if (MediaQuery.of(context).size.width < 1100 &&
+        MediaQuery.of(context).size.width >= 650) {
+      width = MediaQuery.of(context).size.width / 1.3;
+    } else if (MediaQuery.of(context).size.width < 650) {
+      width = MediaQuery.of(context).size.width / 1.2;
+    }
     return Form(
       key: _formKey,
       child: Row(
@@ -144,18 +153,15 @@ class _AddAutreFinState extends State<AddAutreFin> {
             child: Padding(
               padding: const EdgeInsets.all(p16),
               child: SizedBox(
-                width: Responsive.isDesktop(context)
-                    ? MediaQuery.of(context).size.width / 1.5
-                    : MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height,
+                width: width,
+                height: MediaQuery.of(context).size.height, 
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: const [
-                        TitleWidget(
-                            title: "Ajout Financement Interne/ Externe"),
+                        TitleWidget(title: "Autre Financement"),
                       ],
                     ),
                     const SizedBox(

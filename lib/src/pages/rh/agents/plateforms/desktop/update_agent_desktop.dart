@@ -1103,8 +1103,7 @@ class _UpdateAgentDesktopState extends State<UpdateAgentDesktop> {
         });
   }
 
-  Future submit() async {
-    print('image $uploadedFileUrl');
+  Future submit() async { 
     final agentModel = AgentModel(
         id: widget.agentModel.id,
         nom: (nomController.text == '')

@@ -55,7 +55,7 @@ class MenuOptions {
             UserSharedPref().removeIdToken();
             UserSharedPref().removeAccessToken();
             UserSharedPref().removeRefreshToken();
-            // Phoenix.rebirth(context); // Il genere un probleme de deconnection
+            // Phoenix.rebirth(context);Phoenix.rebirth(context); // Il genere un probleme de deconnection
             Navigator.pushNamed(context, UserRoutes.logout);
           });
         });

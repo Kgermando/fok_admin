@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:fokad_admin/src/api/auth/auth_api.dart';
 import 'package:fokad_admin/src/helpers/user_shared_pref.dart';
 import 'package:fokad_admin/src/models/users/user_model.dart';
@@ -15,6 +16,7 @@ import 'package:flutter/material.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+   
   setPathUrlStrategy();
   timeago.setLocaleMessages('fr_short', timeago.FrShortMessages());
   UserModel user = await AuthApi().getUserId();
@@ -27,6 +29,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (kDebugMode) {
+      print("departement ${user.departement}");
+    }
     String homeRoute = "";
     if (user.departement == '-') {
       homeRoute = UserRoutes.login;
@@ -79,8 +84,10 @@ class MyApp extends StatelessWidget {
         } else {
           homeRoute = LogistiqueRoutes.logAnguinAuto;
         }
+      } else if (user.departement == "Support") {
+        homeRoute = AdminRoutes.adminDashboard; 
       } else {
-        homeRoute = UserRoutes.login;
+        
       }
     }
 

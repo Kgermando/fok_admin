@@ -341,6 +341,8 @@ class _LoginPageState extends State<LoginPage> {
                         Navigator.pushNamed(
                             context, LogistiqueRoutes.logAnguinAuto);
                       }
+                    } else if (user.departement == "Support") {
+                      Navigator.pushNamed(context, AdminRoutes.adminDashboard);
                     }
                     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                       content: const Text("Login succès!"),

@@ -53,7 +53,7 @@ class _ComMarketingState extends State<ComMarketing> {
     int userRole = int.parse(widget.user.role);
     return ExpansionTile(
       leading: const Icon(Icons.store, size: 30.0),
-      title: AutoSizeText('Comm. & Marketing', maxLines: 1, style: bodyLarge),
+      title: AutoSizeText('Commercial & Marketing', maxLines: 2, style: bodyLarge),
       initiallyExpanded:
           (widget.user.departement == 'Commercial et Marketing') ? true : false,
       onExpansionChanged: (val) {

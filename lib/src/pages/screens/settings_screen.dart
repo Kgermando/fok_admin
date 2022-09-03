@@ -1,6 +1,7 @@
 import 'package:fokad_admin/src/utils/dropdown.dart';
 import 'package:flutter/material.dart';
 import 'package:fokad_admin/src/constants/responsive.dart';
+import 'package:fokad_admin/src/utils/info_system.dart';
 import 'package:fokad_admin/src/widgets/change_theme_button_widget.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -68,7 +69,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   padding: const EdgeInsets.all(8.0),
                   child: ListSettings(
                       icon: Icons.apps_rounded,
-                      title: 'Version de l\'application web',
+                      title: 'Version Plateform',
                       options: getVersionField(context)),
                 ),
               ),
@@ -104,12 +105,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget getVersionField(BuildContext context) {
     final headline6 = Theme.of(context).textTheme.headline6;
     return TextButton(
-      child: Text('2.0.1+2', style: headline6),
+      child: Text(InfoSystem().version(), style: headline6),
       onPressed: () => showDialog<String>(
         context: context,
-        builder: (BuildContext context) => const AlertDialog(
-            title: Text('FOKAD ADMIN'),
-            content: Text('Version: 0.0.1+2 \nDate: 09-3-2022')),
+        builder: (BuildContext context) => AlertDialog(
+            title: Text(InfoSystem().name()),
+            content: Text('Version: ${InfoSystem().version()} \nDate: 03-09-2022')),
       ),
     );
   }
@@ -126,7 +127,6 @@ class ListSettings extends StatelessWidget {
   final IconData icon;
   final String title;
   final Widget options;
-  // final VoidCallback? tap;
 
   @override
   Widget build(BuildContext context) {

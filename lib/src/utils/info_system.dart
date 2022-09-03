@@ -1,20 +1,14 @@
 class InfoSystem { 
-  String name() => "Astrid PlateForm";
-  String namelong() => "Astrid PlateForm";
+  String name() => "FOKAD PlateForm";
+  String namelong() => "FOKAD PlateForm";
   String description() => "Plateforme ERP pour entreprise priveée et public";
-  String nameAdress() => "Astrid PlateForm";
-  String version() => "1.0.1+0";
+  String nameAdress() => "FOKAD PlateForm";
+  String version() => "2.0.0.5";
   String logo() => "assets/images/logo_sans_fond.png";
-  String rccm() => "GK5-84-5E5-43";
-  String nImpot() => "2546821331";
-  String iDNat() => "123456789";
-
-  Map plateforms() => {
-    "isWindows" : "",
-    "isAndroid": "",
-    "isLinux": "",
-    "isMac": "",
-    "isIOS": "",
-    "isWeb": "", 
-  };
+  String rccm() => "  CD/KNG/RCCM/21-B-01851";
+  String nImpot() => "-";
+  String iDNat() => "01-H5300-N8539IR";
+  String email() => "-";
+  String phone() => "+243 972 361 000";
+ 
 }

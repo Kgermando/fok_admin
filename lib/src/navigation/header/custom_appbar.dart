@@ -18,6 +18,7 @@ import 'package:fokad_admin/src/models/menu_item.dart';
 import 'package:fokad_admin/src/models/users/user_model.dart';
 import 'package:fokad_admin/src/navigation/header/header_item.dart';
 import 'package:fokad_admin/src/routes/routes.dart';
+import 'package:fokad_admin/src/utils/info_system.dart';
 import 'package:fokad_admin/src/utils/menu_items.dart';
 import 'package:fokad_admin/src/utils/menu_options.dart';
 import 'package:badges/badges.dart';
@@ -37,7 +38,7 @@ class CustomAppbar extends StatefulWidget {
 }
 
 class _CustomAppbarState extends State<CustomAppbar> {
-  String isUpdateVersion = "2.0.0.4";
+  String isUpdateVersion = InfoSystem().version();
   Timer? timer;
   int tacheCount = 0;
   int cartCount = 0;
@@ -96,7 +97,7 @@ class _CustomAppbarState extends State<CustomAppbar> {
       }).then((value) {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
           content: const Text("Téléchargement terminé!"),
-          backgroundColor: Colors.green[700],
+          backgroundColor: Colors.purple[700],
         ));
         OpenFile.open(fileName);
       });
@@ -145,7 +146,7 @@ class _CustomAppbarState extends State<CustomAppbar> {
                           : AutoSizeText(progressString,
                               maxLines: 1,
                               style: const TextStyle(fontSize: 12.0))
-                      : const Icon(Icons.download)),
+                      : Icon(Icons.download, color: Colors.red.shade700)),
             FutureBuilder<UserModel>(
                 future: AuthApi().getUserId(),
                 builder:

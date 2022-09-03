@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:fokad_admin/src/api/administration/actionnaire_cotisation_api.dart';
 import 'package:fokad_admin/src/api/comptabilite/journal_livre_api.dart';
 import 'package:flash_card/flash_card.dart';
 import 'package:flutter/material.dart';
@@ -85,12 +86,16 @@ class _DashboardAdministrationState extends State<DashboardAdministration> {
   double depensesCaisse = 0.0;
   double soldeCaisse = 0.0;
   double nonPayesCreance = 0.0;
-  double creancePayement = 0.0;
+  double creancePaiement = 0.0;
   double soldeCreance = 0.0;
   double nonPayesDette = 0.0;
   double detteRemboursement = 0.0;
   double soldeDette = 0.0;
   double cumulFinanceExterieur = 0.0;
+  double actionnaire = 0.0;
+  double recetteFinanceExterieur = 0.0;
+  double depenseFinanceExterieur = 0.0;
+  double soldeFinExterieur = 0.0;
 
   // Exploitations
   int projetsApprouveCount = 0;
@@ -140,6 +145,8 @@ class _DashboardAdministrationState extends State<DashboardAdministration> {
     var dataDetteList = await DetteApi().getAllData();
     var creanceDettes = await CreanceDetteApi().getAllData();
     var dataFinanceExterieurList = await FinExterieurApi().getAllData();
+    var actionnaireCotisationList =
+        await ActionnaireCotisationApi().getAllData();
 
     if (mounted) {
       setState(() {
@@ -266,31 +273,32 @@ class _DashboardAdministrationState extends State<DashboardAdministration> {
           depensesCaisse += double.parse(item!.montant);
         }
 
-        // Creance
-        var creancePayementList = creanceDettes
+        // Creance remboursement
+        var creancePaiementList = creanceDettes
             .where((element) => element.creanceDette == 'creances');
 
-        List<CreanceModel?> nonPayeCreanceList = dataCreanceList
+        List<CreanceModel> nonPayeCreanceList = dataCreanceList
             .where((element) =>
-                element.approbationDG == "Approved" &&
-                element.approbationDD == "Approved" &&
-                element.statutPaie == 'false')
+                element.statutPaie == 'false' &&
+                element.approbationDG == 'Approved' &&
+                element.approbationDD == 'Approved')
             .toList();
+
         for (var item in nonPayeCreanceList) {
-          nonPayesCreance += double.parse(item!.montant);
+          nonPayesCreance += double.parse(item.montant);
         }
-        for (var item in creancePayementList) {
-          creancePayement += double.parse(item.montant);
+        for (var item in creancePaiementList) {
+          creancePaiement += double.parse(item.montant);
         }
 
-        // Dette
+        // Dette paiement
         var detteRemboursementList =
             creanceDettes.where((element) => element.creanceDette == 'dettes');
         List<DetteModel?> nonPayeDetteList = dataDetteList
             .where((element) =>
-                element.approbationDG == "Approved" &&
-                element.approbationDD == "Approved" &&
-                element.statutPaie == 'false')
+                element.statutPaie == 'false' &&
+                element.approbationDG == 'Approved' &&
+                element.approbationDD == 'Approved')
             .toList();
         for (var item in nonPayeDetteList) {
           nonPayesDette += double.parse(item!.montant);
@@ -299,61 +307,85 @@ class _DashboardAdministrationState extends State<DashboardAdministration> {
           detteRemboursement += double.parse(item.montant);
         }
 
-        // FinanceExterieur
-        List<FinanceExterieurModel?> recetteList = dataFinanceExterieurList;
-        for (var item in recetteList) {
-          cumulFinanceExterieur += double.parse(item!.montant);
+        // Fin interne actionnaire
+        for (var item in actionnaireCotisationList) {
+          actionnaire += double.parse(item.montant);
         }
+
+        // FinanceExterieur
+        List<FinanceExterieurModel?> recetteFinExtList =
+            dataFinanceExterieurList
+                .where((element) => element.typeOperation == "Depot")
+                .toList();
+
+        for (var item in recetteFinExtList) {
+          recetteFinanceExterieur += double.parse(item!.montant);
+        }
+        List<FinanceExterieurModel?> depenseFinExtList =
+            dataFinanceExterieurList
+                .where((element) => element.typeOperation == "Depot")
+                .toList();
+        for (var item in depenseFinExtList) {
+          depenseFinanceExterieur += double.parse(item!.montant);
+        }
+
+        soldeCreance = nonPayesCreance - creancePaiement;
+        soldeDette = nonPayesDette - detteRemboursement;
 
         soldeBanque = recetteBanque - depensesBanque;
         soldeCaisse = recetteCaisse - depensesCaisse;
-        soldeCreance = nonPayesCreance - creancePayement;
-        soldeDette = nonPayesDette - detteRemboursement;
+        soldeFinExterieur = recetteFinanceExterieur - depenseFinanceExterieur;
 
+        cumulFinanceExterieur = actionnaire + soldeFinExterieur;  
+        depenses = depensesBanque + depensesCaisse + depenseFinanceExterieur;
         disponible = soldeBanque + soldeCaisse + cumulFinanceExterieur;
+
+
+        // Budget 
+          for (var item in ligneBudgetaireList) {
+            coutTotal += double.parse(item.coutTotal);
+          }
+
+          for (var item in dataCampaignList) {
+            totalCampaign += double.parse(item.coutCampaign);
+          }
+          for (var item in dataDevisList) {
+            var devisCaisseList = devisListObjetsList
+                .where((element) =>
+                    element.referenceDate.microsecondsSinceEpoch ==
+                    item.createdRef.microsecondsSinceEpoch)
+                .toList();
+            for (var element in devisCaisseList) {
+              totalDevis += double.parse(element.montantGlobal);
+            }
+          }
+          for (var item in dataProjetList) {
+            totalProjet += double.parse(item.coutProjet);
+          }
+          for (var item in dataSalaireList) {
+            totalSalaire += double.parse(item.salaire);
+          }
+          for (var item in dataTransRestList) {
+            var devisCaisseList = tansRestList
+                .where((element) =>
+                    element.reference.microsecondsSinceEpoch ==
+                    item.createdRef.microsecondsSinceEpoch)
+                .toList();
+            for (var element in devisCaisseList) {
+              totalTransRest += double.parse(element.montant);
+            }
+          }
+          // Sommes budgets
+          sommeEnCours = totalCampaign +
+              totalDevis +
+              totalProjet +
+              totalSalaire +
+              totalTransRest;
+          sommeRestantes = coutTotal - sommeEnCours;
+          poursentExecution = sommeRestantes * 100 / coutTotal;
       });
 
-      for (var item in ligneBudgetaireList) {
-        coutTotal += double.parse(item.coutTotal);
-      }
-
-      for (var item in dataCampaignList) {
-        totalCampaign += double.parse(item.coutCampaign);
-      }
-      for (var item in dataDevisList) {
-        var devisCaisseList = devisListObjetsList
-            .where((element) =>
-                element.referenceDate.microsecondsSinceEpoch ==
-                item.createdRef.microsecondsSinceEpoch)
-            .toList();
-        for (var element in devisCaisseList) {
-          totalDevis += double.parse(element.montantGlobal);
-        }
-      }
-      for (var item in dataProjetList) {
-        totalProjet += double.parse(item.coutProjet);
-      }
-      for (var item in dataSalaireList) {
-        totalSalaire += double.parse(item.salaire);
-      }
-      for (var item in dataTransRestList) {
-        var devisCaisseList = tansRestList
-            .where((element) =>
-                element.reference.microsecondsSinceEpoch ==
-                item.createdRef.microsecondsSinceEpoch)
-            .toList();
-        for (var element in devisCaisseList) {
-          totalTransRest += double.parse(element.montant);
-        }
-      }
-      // Sommes budgets
-      sommeEnCours = totalCampaign +
-          totalDevis +
-          totalProjet +
-          totalSalaire +
-          totalTransRest;
-      sommeRestantes = coutTotal - sommeEnCours;
-      poursentExecution = sommeRestantes * 100 / coutTotal;
+      
     }
   }
 
@@ -494,37 +526,37 @@ class _DashboardAdministrationState extends State<DashboardAdministration> {
                                             .comMarketingDashboard);
                                   },
                                   number: '$campaignCount',
-                                  title: 'Campaignes',
+                                  title: 'Campagnes',
                                   icon: Icons.campaign,
                                   color: Colors.orange.shade700),
                             ],
                           ),
                           const SizedBox(height: p20),
                           Responsive.isDesktop(context)
-                              ? Row(
-                                  children: const [
-                                    Expanded(
-                                        flex: 3,
-                                        child: FlashCard(
-                                            height: 400,
-                                            width: double.infinity,
-                                            frontWidget: CourbeVenteGainYear(),
-                                            backWidget:
-                                                CourbeVenteGainMounth())),
-                                    Expanded(flex: 1, child: DashRHPieWidget())
-                                  ],
-                                )
-                              : Column(
-                                  children: const [
-                                    FlashCard(
-                                        height: 400,
-                                        width: double.infinity,
-                                        frontWidget: CourbeVenteGainYear(),
-                                        backWidget: CourbeVenteGainMounth()),
-                                    SizedBox(height: p20),
-                                    DashRHPieWidget()
-                                  ],
-                                )
+                            ? Row(
+                                children: const [
+                                  Expanded(
+                                      flex: 3,
+                                      child: FlashCard(
+                                          height: 400,
+                                          width: double.infinity,
+                                          frontWidget: CourbeVenteGainYear(),
+                                          backWidget:
+                                              CourbeVenteGainMounth())),
+                                  Expanded(flex: 1, child: DashRHPieWidget())
+                                ],
+                              )
+                            : Column(
+                                children: const [
+                                  FlashCard(
+                                      height: 400,
+                                      width: double.infinity,
+                                      frontWidget: CourbeVenteGainYear(),
+                                      backWidget: CourbeVenteGainMounth()),
+                                  SizedBox(height: p20),
+                                  DashRHPieWidget()
+                                ],
+                              )
                         ],
                       ))
                     ],

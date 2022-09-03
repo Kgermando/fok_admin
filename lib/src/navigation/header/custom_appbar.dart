@@ -37,7 +37,7 @@ class CustomAppbar extends StatefulWidget {
 }
 
 class _CustomAppbarState extends State<CustomAppbar> {
-  String isUpdateVersion = "2.0.0.3";
+  String isUpdateVersion = "2.0.0.4";
   Timer? timer;
   int tacheCount = 0;
   int cartCount = 0;

@@ -36,8 +36,6 @@ class _DashRHPieWidgetState extends State<DashRHPieWidget> {
   Widget build(BuildContext context) {
     return SizedBox(
       width: Responsive.isDesktop(context) ? 400 : double.infinity,
-      // height: Responsive.isMobile(context) ? 200 : double.infinity,
-      // height: 400,
       child: Card(
         elevation: 6,
         child: SfCircularChart(

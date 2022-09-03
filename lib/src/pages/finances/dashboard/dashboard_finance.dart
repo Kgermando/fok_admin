@@ -131,7 +131,7 @@ class _DashboardFinanceState extends State<DashboardFinance> {
           creancePaiement += double.parse(item.montant);
         }
 
-        // Dette remboursement
+        // Dette paiement
         var detteRemboursementList =
             creanceDettes.where((element) => element.creanceDette == 'dettes');
         List<DetteModel?> nonPayeDetteList = dataDetteList
@@ -147,7 +147,7 @@ class _DashboardFinanceState extends State<DashboardFinance> {
           detteRemboursement += double.parse(item.montant);
         }
 
-        // Fin interne
+        // Fin interne actionnaire
         for (var item in actionnaireCotisationList) {
           actionnaire += double.parse(item.montant);
         }

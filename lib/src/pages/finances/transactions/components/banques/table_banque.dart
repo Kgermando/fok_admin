@@ -27,8 +27,6 @@ class _TableBanqueState extends State<TableBanque> {
   PlutoGridStateManager? stateManager;
   PlutoGridSelectingMode gridSelectingMode = PlutoGridSelectingMode.row;
 
-  int? id;
-
   double recette = 0.0;
   double depenses = 0.0;
   double solde = 0.0;

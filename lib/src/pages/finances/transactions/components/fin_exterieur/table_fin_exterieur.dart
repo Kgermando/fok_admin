@@ -1,5 +1,8 @@
 import 'dart:async';
 
+import 'package:fokad_admin/src/pages/finances/transactions/plateforms/desktop/solde_caisse_banque_desktop.dart';
+import 'package:fokad_admin/src/pages/finances/transactions/plateforms/mobile/solde_caisse_banque_mobile.dart';
+import 'package:fokad_admin/src/pages/finances/transactions/plateforms/tablet/solde_caisse_banque_tablet.dart';
 import 'package:flutter/material.dart';
 import 'package:fokad_admin/src/api/finances/fin_exterieur_api.dart';
 import 'package:fokad_admin/src/models/finances/fin_exterieur_model.dart';
@@ -25,8 +28,10 @@ class _TableFinExterieurState extends State<TableFinExterieur> {
   PlutoGridStateManager? stateManager;
   PlutoGridSelectingMode gridSelectingMode = PlutoGridSelectingMode.row;
 
-  int? id;
-  double cumul = 0.0;
+
+  double recette = 0.0;
+  double depenses = 0.0;
+  double solde = 0.0;
 
   @override
   initState() {
@@ -40,15 +45,21 @@ class _TableFinExterieurState extends State<TableFinExterieur> {
   List<FinanceExterieurModel> dataList = [];
 
   Future<void> getData() async {
-    List<FinanceExterieurModel> financeExterieurs =
-        await FinExterieurApi().getAllData();
+    var financeExterieurs = await FinExterieurApi().getAllData();
     setState(() {
-      List<FinanceExterieurModel?> recetteList = financeExterieurs;
-      for (var item in recetteList) {
-        cumul += double.parse(item!.montant);
-      }
-
       dataList = financeExterieurs.toList();
+
+      var recetteList =
+          financeExterieurs.where((element) => element.typeOperation == "Depot").toList();
+      var depensesList = financeExterieurs
+          .where((element) => element.typeOperation == "Retrait")
+          .toList(); 
+      for (var item in recetteList) {
+        recette += double.parse(item.montant);
+      } 
+      for (var item in depensesList) {
+        depenses += double.parse(item.montant);
+      }
     });
   }
 
@@ -144,33 +155,17 @@ class _TableFinExterieurState extends State<TableFinExterieur> {
   }
 
   Widget totalSolde() {
-    final bodyMedium = Theme.of(context).textTheme.bodyMedium;
-    return Card(
-      color: Colors.red.shade700,
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Row(
-              children: [
-                SelectableText('Total: ',
-                    style: bodyMedium!.copyWith(
-                        fontWeight: FontWeight.bold, color: Colors.white)),
-                SelectableText(
-                    '${NumberFormat.decimalPattern('fr').format(cumul)} \$',
-                    style: bodyMedium.copyWith(
-                        fontWeight: FontWeight.bold, color: Colors.white))
-              ],
-            ),
-            const SizedBox(
-              width: 100,
-            )
-          ],
-        ),
-      ),
-    );
+    return LayoutBuilder(builder: (context, constraints) {
+      if (constraints.maxWidth >= 1100) {
+        return SoldeCaisseBanqueDesktop(recette: recette, depenses: depenses);
+      } else if (constraints.maxWidth < 1100 && constraints.maxWidth >= 650) {
+        return SoldeCaisseBanqueTablet(recette: recette, depenses: depenses);
+      } else {
+        return SoldeCaisseBanqueMobile(recette: recette, depenses: depenses);
+      }
+    });
   }
+
 
   void agentsColumn() {
     columns = [

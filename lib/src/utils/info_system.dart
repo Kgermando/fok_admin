@@ -3,7 +3,7 @@ class InfoSystem {
   String namelong() => "FOKAD PlateForm";
   String description() => "Plateforme ERP pour entreprise priveée et public";
   String nameAdress() => "FOKAD PlateForm";
-  String version() => "2.0.0.5";
+  String version() => "2.0.0.6";
   String logo() => "assets/images/logo_sans_fond.png";
   String rccm() => "  CD/KNG/RCCM/21-B-01851";
   String nImpot() => "-";

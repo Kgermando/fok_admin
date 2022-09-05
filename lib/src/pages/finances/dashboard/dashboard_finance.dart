@@ -153,20 +153,19 @@ class _DashboardFinanceState extends State<DashboardFinance> {
         }
 
         // FinanceExterieur
-        List<FinanceExterieurModel?> recetteFinExtList =
+        var recetteFinExtList =
             dataFinanceExterieurList
-                .where((element) => element.typeOperation == "Depot")
-                .toList();
+                .where((element) => element.typeOperation == "Depot").toList();
 
         for (var item in recetteFinExtList) {
-          recetteFinanceExterieur += double.parse(item!.montant);
+          recetteFinanceExterieur += double.parse(item.montant);
         }
-        List<FinanceExterieurModel?> depenseFinExtList =
+        var depenseFinExtList =
             dataFinanceExterieurList
-                .where((element) => element.typeOperation == "Depot")
+                .where((element) => element.typeOperation == "Retrait")
                 .toList();
         for (var item in depenseFinExtList) {
-          depenseFinanceExterieur += double.parse(item!.montant);
+          depenseFinanceExterieur += double.parse(item.montant);
         }
 
         soldeCreance = nonPayesCreance - creancePaiement;
@@ -178,7 +177,7 @@ class _DashboardFinanceState extends State<DashboardFinance> {
 
         cumulFinanceExterieur = actionnaire + soldeFinExterieur;  
         depenses = depensesBanque + depensesCaisse + depenseFinanceExterieur;
-        disponible = soldeBanque + soldeCaisse + cumulFinanceExterieur; // Montant disponible
+        disponible = soldeBanque + soldeCaisse + cumulFinanceExterieur;  
       });
     }
   }

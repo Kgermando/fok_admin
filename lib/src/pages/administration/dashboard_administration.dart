@@ -313,20 +313,18 @@ class _DashboardAdministrationState extends State<DashboardAdministration> {
         }
 
         // FinanceExterieur
-        List<FinanceExterieurModel?> recetteFinExtList =
-            dataFinanceExterieurList
-                .where((element) => element.typeOperation == "Depot")
-                .toList();
+        var recetteFinExtList = dataFinanceExterieurList
+            .where((element) => element.typeOperation == "Depot")
+            .toList();
 
         for (var item in recetteFinExtList) {
-          recetteFinanceExterieur += double.parse(item!.montant);
+          recetteFinanceExterieur += double.parse(item.montant);
         }
-        List<FinanceExterieurModel?> depenseFinExtList =
-            dataFinanceExterieurList
-                .where((element) => element.typeOperation == "Depot")
-                .toList();
+        var depenseFinExtList = dataFinanceExterieurList
+            .where((element) => element.typeOperation == "Retrait")
+            .toList();
         for (var item in depenseFinExtList) {
-          depenseFinanceExterieur += double.parse(item!.montant);
+          depenseFinanceExterieur += double.parse(item.montant);
         }
 
         soldeCreance = nonPayesCreance - creancePaiement;

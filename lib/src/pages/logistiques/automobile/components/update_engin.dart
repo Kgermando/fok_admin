@@ -575,10 +575,10 @@ class _UpdateEnginState extends State<UpdateEngin> {
         signature: signature.toString(),
         createdRef: DateTime.now(),
         created: DateTime.now(),
-        approbationDG: '-',
+        approbationDG: 'Approved',
         motifDG: '-',
         signatureDG: '-',
-        approbationDD: '-',
+        approbationDD: 'Approved',
         motifDD: '-',
         signatureDD: '-');
 

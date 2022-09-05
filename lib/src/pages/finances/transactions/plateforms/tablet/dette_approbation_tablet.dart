@@ -376,7 +376,7 @@ class _DetteApprobationTabletState extends State<DetteApprobationTablet> {
         signature: data.signature,
         createdRef: data.createdRef,
         created: DateTime.now(),
-        approbationDG: '-',
+        approbationDG: 'Approved',
         motifDG: '-',
         signatureDG: '-',
         approbationDD: approbationDD,

@@ -76,26 +76,26 @@ class _ComMarketingState extends State<ComMarketing> {
                     context, ComMarketingRoutes.comMarketingDashboard);
                 // Navigator.of(context).pop();
               }),
-        if (userRole <= 2)
-          DrawerWidget(
-              selected:
-                  widget.pageCurrente == ComMarketingRoutes.comMarketingDD,
-              icon: Icons.manage_accounts,
-              sizeIcon: 20.0,
-              title: 'Directeur de departement',
-              style: bodyText1!,
-              badge: Badge(
-                showBadge: (itemCount >= 1) ? true : false,
-                badgeColor: Colors.teal,
-                badgeContent: Text('$itemCount',
-                    style:
-                        const TextStyle(fontSize: 10.0, color: Colors.white)),
-                child: const Icon(Icons.notifications),
-              ),
-              onTap: () {
-                Navigator.pushNamed(context, ComMarketingRoutes.comMarketingDD);
-                // Navigator.of(context).pop();
-              }),
+        // if (userRole <= 2)
+        //   DrawerWidget(
+        //       selected:
+        //           widget.pageCurrente == ComMarketingRoutes.comMarketingDD,
+        //       icon: Icons.manage_accounts,
+        //       sizeIcon: 20.0,
+        //       title: 'Directeur de departement',
+        //       style: bodyText1!,
+        //       badge: Badge(
+        //         showBadge: (itemCount >= 1) ? true : false,
+        //         badgeColor: Colors.teal,
+        //         badgeContent: Text('$itemCount',
+        //             style:
+        //                 const TextStyle(fontSize: 10.0, color: Colors.white)),
+        //         child: const Icon(Icons.notifications),
+        //       ),
+        //       onTap: () {
+        //         Navigator.pushNamed(context, ComMarketingRoutes.comMarketingDD);
+        //         // Navigator.of(context).pop();
+        //       }),
         ExpansionTile(
           leading: const Icon(Icons.visibility, size: 20.0),
           title: Text('Marketing', style: bodyText1),

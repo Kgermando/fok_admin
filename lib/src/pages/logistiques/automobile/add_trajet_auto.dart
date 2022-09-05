@@ -357,7 +357,7 @@ class _AddTrajetAutoState extends State<AddTrajetAuto> {
         signature: signature.toString(),
         createdRef: DateTime.now(),
         created: DateTime.now(),
-        approbationDD: '-',
+        approbationDD: 'Approved',
         motifDD: '-',
         signatureDD: '-');
     await TrajetApi().insertData(trajetModel).then((value) {

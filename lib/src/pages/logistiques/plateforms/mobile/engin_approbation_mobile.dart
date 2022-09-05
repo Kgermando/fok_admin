@@ -364,7 +364,7 @@ class _EnginApprobationMobileState extends State<EnginApprobationMobile> {
         signature: data.signature,
         createdRef: data.createdRef,
         created: data.created,
-        approbationDG: '-',
+        approbationDG: 'Approved',
         motifDG: '-',
         signatureDG: '-',
         approbationDD: approbationDD,

@@ -1434,7 +1434,7 @@ class _AddSalaireMobileState extends State<AddSalaireMobile> {
         matricule: agentModel.matricule,
         servicesAffectation: agentModel.servicesAffectation,
         salaire: agentModel.salaire,
-        observation: 'false', // Finance
+        observation: 'true', // Finance
         modePaiement: '-',
         createdAt: DateTime.now(),
         tauxJourHeureMoisSalaire:
@@ -1488,13 +1488,13 @@ class _AddSalaireMobileState extends State<AddSalaireMobile> {
         montantPrisConsiderationCalculCotisationsINSS: (montantPrisConsiderationCalculCotisationsINSSController.text == '') ? '-' : montantPrisConsiderationCalculCotisationsINSSController.text,
         totalDuBrut: (totalDuBrutController.text == '') ? '-' : totalDuBrutController.text,
         signature: widget.signature.toString(),
-        approbationBudget: '-',
+        approbationBudget: 'Approved',
         motifBudget: '-',
         signatureBudget: '-',
-        approbationFin: '-',
+        approbationFin: 'Approved',
         motifFin: '-',
         signatureFin: '-',
-        approbationDD: '-',
+        approbationDD: 'Approved',
         motifDD: '-',
         signatureDD: '-',
         ligneBudgetaire: '-',

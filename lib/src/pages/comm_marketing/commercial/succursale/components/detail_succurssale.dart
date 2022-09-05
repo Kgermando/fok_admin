@@ -160,24 +160,24 @@ class _DetailSuccursaleState extends State<DetailSuccursale> {
                                     children: [
                                       pageDetail(data!),
                                       const SizedBox(height: p10),
-                                      LayoutBuilder(
-                                          builder: (context, constraints) {
-                                        if (constraints.maxWidth >= 1100) {
-                                          return SuccursaleApprobationDesktop(
-                                              user: user,
-                                              succursaleModel: data);
-                                        } else if (constraints.maxWidth <
-                                                1100 &&
-                                            constraints.maxWidth >= 650) {
-                                          return SuccursaleApprobationTablet(
-                                              user: user,
-                                              succursaleModel: data);
-                                        } else {
-                                          return SuccursaleApprobationMobile(
-                                              user: user,
-                                              succursaleModel: data);
-                                        }
-                                      })
+                                      // LayoutBuilder(
+                                      //     builder: (context, constraints) {
+                                      //   if (constraints.maxWidth >= 1100) {
+                                      //     return SuccursaleApprobationDesktop(
+                                      //         user: user,
+                                      //         succursaleModel: data);
+                                      //   } else if (constraints.maxWidth <
+                                      //           1100 &&
+                                      //       constraints.maxWidth >= 650) {
+                                      //     return SuccursaleApprobationTablet(
+                                      //         user: user,
+                                      //         succursaleModel: data);
+                                      //   } else {
+                                      //     return SuccursaleApprobationMobile(
+                                      //         user: user,
+                                      //         succursaleModel: data);
+                                      //   }
+                                      // })
                                     ],
                                   ),
                                 ))

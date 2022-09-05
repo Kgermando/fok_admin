@@ -679,7 +679,7 @@ class _UpdateEntretienState extends State<UpdateEntretien> {
         signature: signature.toString(),
         createdRef: entretiensCount,
         created: DateTime.now(),
-        approbationDD: '-',
+        approbationDD: 'Approved',
         motifDD: '-',
         signatureDD: '-');
     await EntretienApi().updateData(entretienModel).then((value) {

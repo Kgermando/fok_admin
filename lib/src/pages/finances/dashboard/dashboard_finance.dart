@@ -264,19 +264,19 @@ class _DashboardFinanceState extends State<DashboardFinance> {
                                 color: Colors.purple.shade700,
                                 colorText: Colors.white,
                               ),
-                              DashboardCardWidget(
-                                gestureTapCallback: () {
-                                  Navigator.pushNamed(
-                                      context,
-                                      FinanceRoutes
-                                          .transactionsFinancementExterne);
-                                },
-                                title: 'ACTIONNAIRE',
-                                icon: Icons.money_outlined,
-                                montant: '$actionnaire',
-                                color: Colors.teal.shade700,
-                                colorText: Colors.white,
-                              ),
+                              // DashboardCardWidget(
+                              //   gestureTapCallback: () {
+                              //     Navigator.pushNamed(
+                              //         context,
+                              //         FinanceRoutes
+                              //             .transactionsFinancementExterne);
+                              //   },
+                              //   title: 'ACTIONNAIRE',
+                              //   icon: Icons.money_outlined,
+                              //   montant: '$actionnaire',
+                              //   color: Colors.teal.shade700,
+                              //   colorText: Colors.white,
+                              // ),
                               DashboardCardWidget(
                                 gestureTapCallback: () {
                                   Navigator.pushNamed(

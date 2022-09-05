@@ -272,10 +272,10 @@ class _AddBudgetPrevionelState extends State<AddBudgetPrevionel> {
         createdRef: DateTime.now(),
         created: DateTime.now(),
         isSubmit: 'false',
-        approbationDG: '-',
+        approbationDG: 'Approved',
         motifDG: '-',
         signatureDG: '-',
-        approbationDD: '-',
+        approbationDD: 'Approved',
         motifDD: '-',
         signatureDD: '-');
 

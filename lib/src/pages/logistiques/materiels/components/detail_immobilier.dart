@@ -118,20 +118,20 @@ class _DetailImmobilierState extends State<DetailImmobilier> {
                                   children: [
                                     pageDetail(data!),
                                     const SizedBox(height: p10),
-                                    LayoutBuilder(
-                                        builder: (context, constraints) {
-                                      if (constraints.maxWidth >= 1100) {
-                                        return ImmobilierApprobationDesktop(
-                                            immobilierModel: data, user: user);
-                                      } else if (constraints.maxWidth < 1100 &&
-                                          constraints.maxWidth >= 650) {
-                                        return ImmobilierApprobationTablet(
-                                            immobilierModel: data, user: user);
-                                      } else {
-                                        return ImmobilierApprobationMobile(
-                                            immobilierModel: data, user: user);
-                                      }
-                                    })
+                                    // LayoutBuilder(
+                                    //     builder: (context, constraints) {
+                                    //   if (constraints.maxWidth >= 1100) {
+                                    //     return ImmobilierApprobationDesktop(
+                                    //         immobilierModel: data, user: user);
+                                    //   } else if (constraints.maxWidth < 1100 &&
+                                    //       constraints.maxWidth >= 650) {
+                                    //     return ImmobilierApprobationTablet(
+                                    //         immobilierModel: data, user: user);
+                                    //   } else {
+                                    //     return ImmobilierApprobationMobile(
+                                    //         immobilierModel: data, user: user);
+                                    //   }
+                                    // })
                                   ],
                                 )))
                               ],

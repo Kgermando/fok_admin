@@ -320,10 +320,10 @@ class _UpdateImmobilierState extends State<UpdateImmobilier> {
         signature: signature.toString(),
         createdRef: widget.immobilierModel.createdRef,
         created: widget.immobilierModel.created,
-        approbationDG: '-',
+        approbationDG: 'Approved',
         motifDG: '-',
         signatureDG: '-',
-        approbationDD: '-',
+        approbationDD: 'Approved',
         motifDD: '-',
         signatureDD: '-');
     await ImmobilierApi().updateData(immobilierModel).then((value) {

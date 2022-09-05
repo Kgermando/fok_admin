@@ -19,7 +19,7 @@ import 'package:fokad_admin/src/widgets/title_widget.dart';
 import 'package:dospace/dospace.dart' as dospace;
 
 class UpdateAgentDesktop extends StatefulWidget {
-const UpdateAgentDesktop(
+  const UpdateAgentDesktop(
       {Key? key,
       required this.departementList,
       required this.typeContratList,
@@ -41,7 +41,9 @@ const UpdateAgentDesktop(
       required this.serviceAffectationEXp,
       required this.serviceAffectationComm,
       required this.serviceAffectationLog,
-      required this.agentModel, required this.fonctionActionnaireList, required this.serviceAffectationActionnaire})
+      required this.agentModel,
+      required this.fonctionActionnaireList,
+      required this.serviceAffectationActionnaire})
       : super(key: key);
   final List<String> departementList;
   final List<String> typeContratList;
@@ -204,7 +206,7 @@ class _UpdateAgentDesktopState extends State<UpdateAgentDesktop> {
     return updateAgentWidget();
   }
 
-  Widget updateAgentWidget() { 
+  Widget updateAgentWidget() {
     return FutureBuilder<AgentCountModel>(
         future: AgentsApi().getCount(),
         builder:
@@ -807,12 +809,12 @@ class _UpdateAgentDesktopState extends State<UpdateAgentDesktop> {
             // String fokad = 'FO';
             // final date = DateFormat("yy").format(DateTime.now());
 
-            if (departement == 'Actionnaire') { 
+            if (departement == 'Actionnaire') {
               fonctionList = widget.fonctionActionnaireList;
               servAffectList = widget.serviceAffectationActionnaire;
               fonctionOccupe = fonctionList.first;
               servicesAffectation = widget.serviceAffectationActionnaire.first;
-            } else if (departement == 'Administration') { 
+            } else if (departement == 'Administration') {
               fonctionList = widget.fonctionAdminList;
               servAffectList = widget.serviceAffectationAdmin;
               fonctionOccupe = fonctionList.first;
@@ -1103,7 +1105,7 @@ class _UpdateAgentDesktopState extends State<UpdateAgentDesktop> {
         });
   }
 
-  Future submit() async { 
+  Future submit() async {
     final agentModel = AgentModel(
         id: widget.agentModel.id,
         nom: (nomController.text == '')
@@ -1175,10 +1177,10 @@ class _UpdateAgentDesktopState extends State<UpdateAgentDesktop> {
             : salaireController.text,
         signature: user!.matricule.toString(),
         created: DateTime.now(),
-        approbationDG: '-',
+        approbationDG: 'Approved',
         motifDG: '-',
         signatureDG: '-',
-        approbationDD: '-',
+        approbationDD: 'Approved',
         motifDD: '-',
         signatureDD: '-');
 

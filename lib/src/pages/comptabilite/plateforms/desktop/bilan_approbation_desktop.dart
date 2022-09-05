@@ -369,7 +369,7 @@ class _BilanApprobationDesktopState extends State<BilanApprobationDesktop> {
         signature: data.signature,
         created: data.created,
         isSubmit: data.isSubmit,
-        approbationDG: '-',
+        approbationDG: 'Approved',
         motifDG: '-',
         signatureDG: '-',
         approbationDD: approbationDD,

@@ -737,7 +737,7 @@ class _AddEntretienPageState extends State<AddEntretienPage> {
         signature: signature.toString(),
         createdRef: entretiensCount,
         created: DateTime.now(),
-        approbationDD: '-',
+        approbationDD: 'Approved',
         motifDD: '-',
         signatureDD: '-');
     await EntretienApi().insertData(entretienModel).then((value) {

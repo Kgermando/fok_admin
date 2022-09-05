@@ -75,42 +75,42 @@ class _FinancesNavState extends State<FinancesNav> {
                 Navigator.pushNamed(context, FinanceRoutes.financeDashboard);
                 // Navigator.of(context).pop();
               }),
-        if (userRole <= 2)
-          DrawerWidget(
-              selected: widget.pageCurrente == FinanceRoutes.finDD,
-              icon: Icons.manage_accounts,
-              sizeIcon: 20.0,
-              title: 'Directeur de departement',
-              style: bodyText1!,
-              badge: Badge(
-                showBadge: (itemCount >= 1) ? true : false,
-                badgeColor: Colors.teal,
-                badgeContent: Text('$itemCount',
-                    style:
-                        const TextStyle(fontSize: 10.0, color: Colors.white)),
-                child: const Icon(Icons.notifications),
-              ),
-              onTap: () {
-                Navigator.pushNamed(context, FinanceRoutes.finDD);
-                // Navigator.of(context).pop();
-              }),
-        DrawerWidget(
-            selected: widget.pageCurrente == FinanceRoutes.finObservation,
-            icon: Icons.grid_view,
-            sizeIcon: 20.0,
-            title: 'Observations',
-            style: bodyText1!,
-            badge: Badge(
-              showBadge: (observationCount >= 1) ? true : false,
-              badgeColor: Colors.purple,
-              badgeContent: Text('$observationCount',
-                  style: const TextStyle(fontSize: 10.0, color: Colors.white)),
-              child: const Icon(Icons.notifications),
-            ),
-            onTap: () {
-              Navigator.pushNamed(context, FinanceRoutes.finObservation);
-              // Navigator.of(context).pop();
-            }),
+        // if (userRole <= 2)
+        //   DrawerWidget(
+        //       selected: widget.pageCurrente == FinanceRoutes.finDD,
+        //       icon: Icons.manage_accounts,
+        //       sizeIcon: 20.0,
+        //       title: 'Directeur de departement',
+        //       style: bodyText1!,
+        //       badge: Badge(
+        //         showBadge: (itemCount >= 1) ? true : false,
+        //         badgeColor: Colors.teal,
+        //         badgeContent: Text('$itemCount',
+        //             style:
+        //                 const TextStyle(fontSize: 10.0, color: Colors.white)),
+        //         child: const Icon(Icons.notifications),
+        //       ),
+        //       onTap: () {
+        //         Navigator.pushNamed(context, FinanceRoutes.finDD);
+        //         // Navigator.of(context).pop();
+        //       }),
+        // DrawerWidget(
+        //     selected: widget.pageCurrente == FinanceRoutes.finObservation,
+        //     icon: Icons.grid_view,
+        //     sizeIcon: 20.0,
+        //     title: 'Observations',
+        //     style: bodyText1!,
+        //     badge: Badge(
+        //       showBadge: (observationCount >= 1) ? true : false,
+        //       badgeColor: Colors.purple,
+        //       badgeContent: Text('$observationCount',
+        //           style: const TextStyle(fontSize: 10.0, color: Colors.white)),
+        //       child: const Icon(Icons.notifications),
+        //     ),
+        //     onTap: () {
+        //       Navigator.pushNamed(context, FinanceRoutes.finObservation);
+        //       // Navigator.of(context).pop();
+        //     }),
         ExpansionTile(
           leading: const Icon(Icons.compare_arrows, size: 20.0),
           title: Text('Transactions', style: bodyText1),
@@ -190,7 +190,7 @@ class _FinancesNavState extends State<FinancesNav> {
             icon: Icons.multiline_chart_sharp,
             sizeIcon: 20.0,
             title: 'Performences',
-            style: bodyText1,
+            style: bodyText1!,
             onTap: () {
               Navigator.pushNamed(context, RhRoutes.rhPerformence);
               // Navigator.of(context).pop();

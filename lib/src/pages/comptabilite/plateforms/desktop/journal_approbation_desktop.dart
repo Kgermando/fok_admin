@@ -369,7 +369,7 @@ class _JournalApprobationDesktopState extends State<JournalApprobationDesktop> {
         fin: data.fin,
         signature: data.signature,
         created: data.created,
-        approbationDG: '-',
+        approbationDG: 'Approved',
         motifDG: '-',
         signatureDG: '-',
         approbationDD: approbationDD,

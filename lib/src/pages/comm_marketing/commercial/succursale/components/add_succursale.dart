@@ -252,10 +252,10 @@ class _AddSurrsaleState extends State<AddSurrsale> {
         province: province.toString(),
         signature: user!.matricule.toString(),
         created: DateTime.now(),
-        approbationDG: '-',
+        approbationDG: 'Approved',
         motifDG: '-',
         signatureDG: '-',
-        approbationDD: '-',
+        approbationDD: 'Approved',
         motifDD: '-',
         signatureDD: '-');
 

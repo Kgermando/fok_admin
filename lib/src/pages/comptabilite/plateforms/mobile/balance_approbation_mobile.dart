@@ -381,7 +381,7 @@ class _BalanceApprobationMobileState extends State<BalanceApprobationMobile> {
         signature: data.signature,
         created: data.created,
         isSubmit: data.isSubmit,
-        approbationDG: '-',
+        approbationDG: 'Approved',
         motifDG: '-',
         signatureDG: '-',
         approbationDD: approbationDD,

@@ -135,20 +135,20 @@ class _DetailEntretienState extends State<DetailEntretien> {
                                   children: [
                                     pageDetail(data),
                                     const SizedBox(height: p10),
-                                    LayoutBuilder(
-                                        builder: (context, constraints) {
-                                      if (constraints.maxWidth >= 1100) {
-                                        return EntretienApprobationDesktop(
-                                            entretienModel: data, user: user);
-                                      } else if (constraints.maxWidth < 1100 &&
-                                          constraints.maxWidth >= 650) {
-                                        return EntretienApprobationTablet(
-                                            entretienModel: data, user: user);
-                                      } else {
-                                        return EntretienApprobationMobile(
-                                            entretienModel: data, user: user);
-                                      }
-                                    })
+                                    // LayoutBuilder(
+                                    //     builder: (context, constraints) {
+                                    //   if (constraints.maxWidth >= 1100) {
+                                    //     return EntretienApprobationDesktop(
+                                    //         entretienModel: data, user: user);
+                                    //   } else if (constraints.maxWidth < 1100 &&
+                                    //       constraints.maxWidth >= 650) {
+                                    //     return EntretienApprobationTablet(
+                                    //         entretienModel: data, user: user);
+                                    //   } else {
+                                    //     return EntretienApprobationMobile(
+                                    //         entretienModel: data, user: user);
+                                    //   }
+                                    // })
                                   ],
                                 )))
                               ],

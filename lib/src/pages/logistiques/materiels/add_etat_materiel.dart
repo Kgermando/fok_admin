@@ -300,7 +300,7 @@ class _AddEtatMaterielState extends State<AddEtatMateriel> {
         signature: signature.toString(),
         createdRef: DateTime.now(),
         created: DateTime.now(),
-        approbationDD: '-',
+        approbationDD: 'Approved',
         motifDD: '-',
         signatureDD: '-');
     await EtatMaterielApi().insertData(etatMaterielModel).then((value) {

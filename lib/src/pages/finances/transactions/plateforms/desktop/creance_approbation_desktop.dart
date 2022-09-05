@@ -377,7 +377,7 @@ class _CreanceApprobationDesktopState extends State<CreanceApprobationDesktop> {
         signature: data.signature,
         createdRef: data.createdRef,
         created: data.created,
-        approbationDG: '-',
+        approbationDG: 'Approved',
         motifDG: '-',
         signatureDG: '-',
         approbationDD: approbationDD,

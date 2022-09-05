@@ -41,7 +41,9 @@ class UpdateAgentTablet extends StatefulWidget {
       required this.serviceAffectationEXp,
       required this.serviceAffectationComm,
       required this.serviceAffectationLog,
-      required this.agentModel, required this.fonctionActionnaireList, required this.serviceAffectationActionnaire})
+      required this.agentModel,
+      required this.fonctionActionnaireList,
+      required this.serviceAffectationActionnaire})
       : super(key: key);
   final List<String> departementList;
   final List<String> typeContratList;
@@ -146,7 +148,7 @@ class _UpdateAgentTabletState extends State<UpdateAgentTablet> {
     experienceController =
         TextEditingController(text: widget.agentModel.experience);
     salaireController = TextEditingController(text: widget.agentModel.salaire);
- 
+
     super.initState();
   }
 
@@ -783,7 +785,7 @@ class _UpdateAgentTabletState extends State<UpdateAgentTablet> {
           setState(() {
             departement = value!;
             fonctionList.clear();
-            servAffectList.clear(); 
+            servAffectList.clear();
             if (departement == 'Actionnaire') {
               fonctionList = widget.fonctionActionnaireList;
               servAffectList = widget.serviceAffectationActionnaire;
@@ -1152,10 +1154,10 @@ class _UpdateAgentTabletState extends State<UpdateAgentTablet> {
             : salaireController.text,
         signature: user!.matricule.toString(),
         created: DateTime.now(),
-        approbationDG: '-',
+        approbationDG: 'Approved',
         motifDG: '-',
         signatureDG: '-',
-        approbationDD: '-',
+        approbationDD: 'Approved',
         motifDD: '-',
         signatureDD: '-');
 

@@ -376,7 +376,7 @@ class _ImmobilierApprobationTabletState
         signature: data.signature,
         createdRef: data.createdRef,
         created: data.created,
-        approbationDG: '-',
+        approbationDG: 'Approved',
         motifDG: '-',
         signatureDG: '-',
         approbationDD: approbationDD,

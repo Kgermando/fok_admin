@@ -171,21 +171,21 @@ class _DetailBilanState extends State<DetailBilan> {
                                     children: [
                                       pageDetail(data!),
                                       const SizedBox(height: p10),
-                                      LayoutBuilder(
-                                          builder: (context, constraints) {
-                                        if (constraints.maxWidth >= 1100) {
-                                          return BilanApprobationDesktop(
-                                              user: user, bilanModel: data);
-                                        } else if (constraints.maxWidth <
-                                                1100 &&
-                                            constraints.maxWidth >= 650) {
-                                          return BilanApprobationTablet(
-                                              user: user, bilanModel: data);
-                                        } else {
-                                          return BilanApprobationMobile(
-                                              user: user, bilanModel: data);
-                                        }
-                                      })
+                                      // LayoutBuilder(
+                                      //     builder: (context, constraints) {
+                                      //   if (constraints.maxWidth >= 1100) {
+                                      //     return BilanApprobationDesktop(
+                                      //         user: user, bilanModel: data);
+                                      //   } else if (constraints.maxWidth <
+                                      //           1100 &&
+                                      //       constraints.maxWidth >= 650) {
+                                      //     return BilanApprobationTablet(
+                                      //         user: user, bilanModel: data);
+                                      //   } else {
+                                      //     return BilanApprobationMobile(
+                                      //         user: user, bilanModel: data);
+                                      //   }
+                                      // })
                                     ],
                                   ),
                                 ))
@@ -1129,10 +1129,10 @@ class _DetailBilanState extends State<DetailBilan> {
         signature: data.signature,
         created: data.created,
         isSubmit: 'true',
-        approbationDG: '-',
+        approbationDG: 'Approved',
         motifDG: '-',
         signatureDG: '-',
-        approbationDD: '-',
+        approbationDD: 'Approved',
         motifDD: '-',
         signatureDD: '-');
     await BilanApi().updateData(bilanModel).then((value) {

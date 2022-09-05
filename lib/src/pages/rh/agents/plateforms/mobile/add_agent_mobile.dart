@@ -22,7 +22,7 @@ import 'package:intl/intl.dart';
 import 'package:dospace/dospace.dart' as dospace;
 
 class AddAgentMobile extends StatefulWidget {
-const AddAgentMobile(
+  const AddAgentMobile(
       {Key? key,
       required this.departementList,
       required this.typeContratList,
@@ -43,7 +43,9 @@ const AddAgentMobile(
       required this.serviceAffectationCompt,
       required this.serviceAffectationEXp,
       required this.serviceAffectationComm,
-      required this.serviceAffectationLog, required this.fonctionActionnaireList, required this.serviceAffectationActionnaire})
+      required this.serviceAffectationLog,
+      required this.fonctionActionnaireList,
+      required this.serviceAffectationActionnaire})
       : super(key: key);
   final List<String> departementList;
   final List<String> typeContratList;
@@ -738,7 +740,7 @@ class _AddAgentMobileState extends State<AddAgentMobile> {
             String fokad = 'FO';
             final date = DateFormat("yy").format(DateTime.now());
 
-           if (departement == 'Actionnaire') {
+            if (departement == 'Actionnaire') {
               matricule = "${fokad}ACT$date-${agentCount.count + 1}";
               fonctionList = widget.fonctionActionnaireList;
               servAffectList = widget.serviceAffectationActionnaire;
@@ -1084,10 +1086,10 @@ class _AddAgentMobileState extends State<AddAgentMobile> {
         salaire: (salaireController.text == '') ? '-' : salaireController.text,
         signature: user!.matricule.toString(),
         created: DateTime.now(),
-        approbationDG: '-',
+        approbationDG: 'Approved',
         motifDG: '-',
         signatureDG: '-',
-        approbationDD: '-',
+        approbationDD: 'Approved',
         motifDD: '-',
         signatureDD: '-');
 

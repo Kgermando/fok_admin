@@ -301,10 +301,10 @@ class _ImmobilierMaterielState extends State<ImmobilierMateriel> {
         signature: signature.toString(),
         createdRef: DateTime.now(),
         created: DateTime.now(),
-        approbationDG: '-',
+        approbationDG: 'Approved',
         motifDG: '-',
         signatureDG: '-',
-        approbationDD: '-',
+        approbationDD: 'Approved',
         motifDD: '-',
         signatureDD: '-');
     await ImmobilierApi().insertData(immobilierModel).then((value) {

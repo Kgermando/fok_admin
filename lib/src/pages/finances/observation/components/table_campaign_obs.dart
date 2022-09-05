@@ -33,7 +33,8 @@ class _TableCampaignObsState extends State<TableCampaignObs> {
   List<CampaignModel> dataList = [];
   Future<void> getData() async {
     List<CampaignModel> campaigns = await CampaignApi().getAllData();
-    setState(() {
+    if (mounted) {
+      setState(() {
       dataList = campaigns
           .where((element) =>
               element.approbationDG == 'Approved' &&
@@ -42,6 +43,7 @@ class _TableCampaignObsState extends State<TableCampaignObs> {
               element.approbationFin == "-")
           .toList();
     });
+    }
   }
 
   @override

@@ -168,24 +168,24 @@ class _DetailBalanceState extends State<DetailBalance> {
                                         }
                                       }),
                                       const SizedBox(height: p10),
-                                      LayoutBuilder(
-                                          builder: (context, constraints) {
-                                        if (constraints.maxWidth >= 1100) {
-                                          return BalanceApprobationDesktop(
-                                              user: user,
-                                              balanceCompteModel: data!);
-                                        } else if (constraints.maxWidth <
-                                                1100 &&
-                                            constraints.maxWidth >= 650) {
-                                          return BalanceApprobationTablet(
-                                              user: user,
-                                              balanceCompteModel: data!);
-                                        } else {
-                                          return BalanceApprobationMobile(
-                                              user: user,
-                                              balanceCompteModel: data!);
-                                        }
-                                      })
+                                      // LayoutBuilder(
+                                      //     builder: (context, constraints) {
+                                      //   if (constraints.maxWidth >= 1100) {
+                                      //     return BalanceApprobationDesktop(
+                                      //         user: user,
+                                      //         balanceCompteModel: data!);
+                                      //   } else if (constraints.maxWidth <
+                                      //           1100 &&
+                                      //       constraints.maxWidth >= 650) {
+                                      //     return BalanceApprobationTablet(
+                                      //         user: user,
+                                      //         balanceCompteModel: data!);
+                                      //   } else {
+                                      //     return BalanceApprobationMobile(
+                                      //         user: user,
+                                      //         balanceCompteModel: data!);
+                                      //   }
+                                      // })
                                     ],
                                   ),
                                 ))

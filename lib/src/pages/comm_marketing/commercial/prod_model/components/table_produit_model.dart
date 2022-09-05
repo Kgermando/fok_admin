@@ -113,17 +113,7 @@ class _TableProduitModelState extends State<TableProduitModel> {
             return resolver<PlutoFilterTypeContains>() as PlutoFilterType;
           },
         ),
-      ),
-      rowColorCallback: (rowColorContext) {
-        if (rowColorContext.row.cells.entries.elementAt(8).value.value ==
-            'Unapproved') {
-          return Colors.red.shade700;
-        } else if (rowColorContext.row.cells.entries.elementAt(8).value.value ==
-            'Approved') {
-          return Colors.green.shade700;
-        }
-        return Colors.white;
-      },
+      ), 
     );
   }
 

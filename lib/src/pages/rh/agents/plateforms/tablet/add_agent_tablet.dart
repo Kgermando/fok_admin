@@ -22,7 +22,7 @@ import 'package:intl/intl.dart';
 import 'package:dospace/dospace.dart' as dospace;
 
 class AddAgentTablet extends StatefulWidget {
-const AddAgentTablet(
+  const AddAgentTablet(
       {Key? key,
       required this.departementList,
       required this.typeContratList,
@@ -43,7 +43,9 @@ const AddAgentTablet(
       required this.serviceAffectationCompt,
       required this.serviceAffectationEXp,
       required this.serviceAffectationComm,
-      required this.serviceAffectationLog, required this.fonctionActionnaireList, required this.serviceAffectationActionnaire})
+      required this.serviceAffectationLog,
+      required this.fonctionActionnaireList,
+      required this.serviceAffectationActionnaire})
       : super(key: key);
   final List<String> departementList;
   final List<String> typeContratList;
@@ -1092,10 +1094,10 @@ class _AddAgentTabletState extends State<AddAgentTablet> {
         salaire: (salaireController.text == '') ? '-' : salaireController.text,
         signature: user!.matricule.toString(),
         created: DateTime.now(),
-        approbationDG: '-',
+        approbationDG: 'Approved',
         motifDG: '-',
         signatureDG: '-',
-        approbationDD: '-',
+        approbationDD: 'Approved',
         motifDD: '-',
         signatureDD: '-');
 

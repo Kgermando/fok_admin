@@ -336,56 +336,53 @@ class _DashboardAdministrationState extends State<DashboardAdministration> {
         soldeCaisse = recetteCaisse - depensesCaisse;
         soldeFinExterieur = recetteFinanceExterieur - depenseFinanceExterieur;
 
-        cumulFinanceExterieur = actionnaire + soldeFinExterieur;  
+        cumulFinanceExterieur = actionnaire + soldeFinExterieur;
         depenses = depensesBanque + depensesCaisse + depenseFinanceExterieur;
         disponible = soldeBanque + soldeCaisse + cumulFinanceExterieur;
 
+        // Budget
+        for (var item in ligneBudgetaireList) {
+          coutTotal += double.parse(item.coutTotal);
+        }
 
-        // Budget 
-          for (var item in ligneBudgetaireList) {
-            coutTotal += double.parse(item.coutTotal);
+        for (var item in dataCampaignList) {
+          totalCampaign += double.parse(item.coutCampaign);
+        }
+        for (var item in dataDevisList) {
+          var devisCaisseList = devisListObjetsList
+              .where((element) =>
+                  element.referenceDate.microsecondsSinceEpoch ==
+                  item.createdRef.microsecondsSinceEpoch)
+              .toList();
+          for (var element in devisCaisseList) {
+            totalDevis += double.parse(element.montantGlobal);
           }
-
-          for (var item in dataCampaignList) {
-            totalCampaign += double.parse(item.coutCampaign);
+        }
+        for (var item in dataProjetList) {
+          totalProjet += double.parse(item.coutProjet);
+        }
+        for (var item in dataSalaireList) {
+          totalSalaire += double.parse(item.salaire);
+        }
+        for (var item in dataTransRestList) {
+          var devisCaisseList = tansRestList
+              .where((element) =>
+                  element.reference.microsecondsSinceEpoch ==
+                  item.createdRef.microsecondsSinceEpoch)
+              .toList();
+          for (var element in devisCaisseList) {
+            totalTransRest += double.parse(element.montant);
           }
-          for (var item in dataDevisList) {
-            var devisCaisseList = devisListObjetsList
-                .where((element) =>
-                    element.referenceDate.microsecondsSinceEpoch ==
-                    item.createdRef.microsecondsSinceEpoch)
-                .toList();
-            for (var element in devisCaisseList) {
-              totalDevis += double.parse(element.montantGlobal);
-            }
-          }
-          for (var item in dataProjetList) {
-            totalProjet += double.parse(item.coutProjet);
-          }
-          for (var item in dataSalaireList) {
-            totalSalaire += double.parse(item.salaire);
-          }
-          for (var item in dataTransRestList) {
-            var devisCaisseList = tansRestList
-                .where((element) =>
-                    element.reference.microsecondsSinceEpoch ==
-                    item.createdRef.microsecondsSinceEpoch)
-                .toList();
-            for (var element in devisCaisseList) {
-              totalTransRest += double.parse(element.montant);
-            }
-          }
-          // Sommes budgets
-          sommeEnCours = totalCampaign +
-              totalDevis +
-              totalProjet +
-              totalSalaire +
-              totalTransRest;
-          sommeRestantes = coutTotal - sommeEnCours;
-          poursentExecution = sommeRestantes * 100 / coutTotal;
+        }
+        // Sommes budgets
+        sommeEnCours = totalCampaign +
+            totalDevis +
+            totalProjet +
+            totalSalaire +
+            totalTransRest;
+        sommeRestantes = coutTotal - sommeEnCours;
+        poursentExecution = sommeRestantes * 100 / coutTotal;
       });
-
-      
     }
   }
 
@@ -422,7 +419,7 @@ class _DashboardAdministrationState extends State<DashboardAdministration> {
                               DashNumberWidget(
                                   gestureTapCallback: () {
                                     Navigator.pushNamed(
-                                        context, RhRoutes.rhDashboard);
+                                        context, RhRoutes.rhAgent);
                                   },
                                   number: '$agentsCount',
                                   title: 'Total agents',
@@ -431,26 +428,26 @@ class _DashboardAdministrationState extends State<DashboardAdministration> {
                               DashNumberWidget(
                                   gestureTapCallback: () {
                                     Navigator.pushNamed(
-                                        context, RhRoutes.rhDashboard);
+                                        context, RhRoutes.rhTableAgentActifs);
                                   },
                                   number: '$agentActifCount',
                                   title: 'Agent Actifs',
                                   icon: Icons.person,
                                   color: Colors.green.shade700),
-                              DashNumberWidget(
-                                  gestureTapCallback: () {
-                                    Navigator.pushNamed(
-                                        context, BudgetRoutes.budgetDashboard);
-                                  },
-                                  number:
-                                      "${NumberFormat.decimalPattern('fr').format(double.parse(poursentExecution.toStringAsFixed(0)))} %",
-                                  title: "Budgets",
-                                  icon: Icons.monetization_on_outlined,
-                                  color: Colors.purple.shade700),
+                              // DashNumberWidget(
+                              //     gestureTapCallback: () {
+                              //       Navigator.pushNamed(
+                              //           context, BudgetRoutes.budgetDashboard);
+                              //     },
+                              //     number:
+                              //         "${NumberFormat.decimalPattern('fr').format(double.parse(poursentExecution.toStringAsFixed(0)))} %",
+                              //     title: "Budgets",
+                              //     icon: Icons.monetization_on_outlined,
+                              //     color: Colors.purple.shade700),
                               DashNumberWidget(
                                   gestureTapCallback: () {
                                     Navigator.pushNamed(context,
-                                        FinanceRoutes.financeDashboard);
+                                        FinanceRoutes.transactionsDettes);
                                   },
                                   number:
                                       "${NumberFormat.decimalPattern('fr').format(soldeDette)} \$",
@@ -460,7 +457,7 @@ class _DashboardAdministrationState extends State<DashboardAdministration> {
                               DashNumberWidget(
                                   gestureTapCallback: () {
                                     Navigator.pushNamed(context,
-                                        FinanceRoutes.financeDashboard);
+                                        FinanceRoutes.transactionsCreances);
                                   },
                                   number:
                                       "${NumberFormat.decimalPattern('fr').format(soldeCreance)} \$",
@@ -492,7 +489,7 @@ class _DashboardAdministrationState extends State<DashboardAdministration> {
                                     Navigator.pushNamed(
                                         context,
                                         ComptabiliteRoutes
-                                            .comptabiliteDashboard);
+                                            .comptabiliteBilan);
                                   },
                                   number: '$bilanCount',
                                   title: 'Bilans',
@@ -503,7 +500,7 @@ class _DashboardAdministrationState extends State<DashboardAdministration> {
                                     Navigator.pushNamed(
                                         context,
                                         ComptabiliteRoutes
-                                            .comptabiliteDashboard);
+                                            .comptabiliteJournalLivre);
                                   },
                                   number: '$journalCount',
                                   title: 'Journals',
@@ -512,7 +509,7 @@ class _DashboardAdministrationState extends State<DashboardAdministration> {
                               DashNumberWidget(
                                   gestureTapCallback: () {
                                     Navigator.pushNamed(context,
-                                        ExploitationRoutes.expDashboard);
+                                        ExploitationRoutes.expProjet);
                                   },
                                   number: '$projetsApprouveCount',
                                   title: 'Projets approvés',
@@ -533,30 +530,30 @@ class _DashboardAdministrationState extends State<DashboardAdministration> {
                           ),
                           const SizedBox(height: p20),
                           Responsive.isDesktop(context)
-                            ? Row(
-                                children: const [
-                                  Expanded(
-                                      flex: 3,
-                                      child: FlashCard(
-                                          height: 400,
-                                          width: double.infinity,
-                                          frontWidget: CourbeVenteGainYear(),
-                                          backWidget:
-                                              CourbeVenteGainMounth())),
-                                  Expanded(flex: 1, child: DashRHPieWidget())
-                                ],
-                              )
-                            : Column(
-                                children: const [
-                                  FlashCard(
-                                      height: 400,
-                                      width: double.infinity,
-                                      frontWidget: CourbeVenteGainYear(),
-                                      backWidget: CourbeVenteGainMounth()),
-                                  SizedBox(height: p20),
-                                  DashRHPieWidget()
-                                ],
-                              )
+                              ? Row(
+                                  children: const [
+                                    Expanded(
+                                        flex: 3,
+                                        child: FlashCard(
+                                            height: 400,
+                                            width: double.infinity,
+                                            frontWidget: CourbeVenteGainYear(),
+                                            backWidget:
+                                                CourbeVenteGainMounth())),
+                                    Expanded(flex: 1, child: DashRHPieWidget())
+                                  ],
+                                )
+                              : Column(
+                                  children: const [
+                                    FlashCard(
+                                        height: 400,
+                                        width: double.infinity,
+                                        frontWidget: CourbeVenteGainYear(),
+                                        backWidget: CourbeVenteGainMounth()),
+                                    SizedBox(height: p20),
+                                    DashRHPieWidget()
+                                  ],
+                                )
                         ],
                       ))
                     ],

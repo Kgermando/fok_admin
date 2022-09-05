@@ -194,38 +194,38 @@ class _DetailTransportRestaurantState extends State<DetailTransportRestaurant> {
                                     ),
                                   ],
                                 ),
-                                Expanded(child: LayoutBuilder(
-                                    builder: (context, constraints) {
-                                  if (constraints.maxWidth >= 1100) {
-                                    return DetailTransRestDesktop(
-                                        transportRestaurationModel: data!,
-                                        departementsList: departementsList,
-                                        ligneBudgetaireList:
-                                            ligneBudgetaireList,
-                                        user: user,
-                                        transRestAgentsList:
-                                            transRestAgentsList);
-                                  } else if (constraints.maxWidth < 1100 &&
-                                      constraints.maxWidth >= 650) {
-                                    return DetailTransRestTablet(
-                                        transportRestaurationModel: data!,
-                                        departementsList: departementsList,
-                                        ligneBudgetaireList:
-                                            ligneBudgetaireList,
-                                        user: user,
-                                        transRestAgentsList:
-                                            transRestAgentsList);
-                                  } else {
-                                    return DetailTransRestMobile(
-                                        transportRestaurationModel: data!,
-                                        departementsList: departementsList,
-                                        ligneBudgetaireList:
-                                            ligneBudgetaireList,
-                                        user: user,
-                                        transRestAgentsList:
-                                            transRestAgentsList);
-                                  }
-                                }))
+                                // Expanded(child: LayoutBuilder(
+                                //     builder: (context, constraints) {
+                                //   if (constraints.maxWidth >= 1100) {
+                                //     return DetailTransRestDesktop(
+                                //         transportRestaurationModel: data!,
+                                //         departementsList: departementsList,
+                                //         ligneBudgetaireList:
+                                //             ligneBudgetaireList,
+                                //         user: user,
+                                //         transRestAgentsList:
+                                //             transRestAgentsList);
+                                //   } else if (constraints.maxWidth < 1100 &&
+                                //       constraints.maxWidth >= 650) {
+                                //     return DetailTransRestTablet(
+                                //         transportRestaurationModel: data!,
+                                //         departementsList: departementsList,
+                                //         ligneBudgetaireList:
+                                //             ligneBudgetaireList,
+                                //         user: user,
+                                //         transRestAgentsList:
+                                //             transRestAgentsList);
+                                //   } else {
+                                //     return DetailTransRestMobile(
+                                //         transportRestaurationModel: data!,
+                                //         departementsList: departementsList,
+                                //         ligneBudgetaireList:
+                                //             ligneBudgetaireList,
+                                //         user: user,
+                                //         transRestAgentsList:
+                                //             transRestAgentsList);
+                                //   }
+                                // }))
                               ],
                             );
                           } else {

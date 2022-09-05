@@ -381,7 +381,7 @@ class _SuccursaleApprobationMobileState
         province: data.province,
         signature: data.signature,
         created: data.created,
-        approbationDG: '-',
+        approbationDG: 'Approved',
         motifDG: '-',
         signatureDG: '-',
         approbationDD: approbationDD,

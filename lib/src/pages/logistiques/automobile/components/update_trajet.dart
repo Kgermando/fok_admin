@@ -390,7 +390,7 @@ class _UpdateTrajetState extends State<UpdateTrajet> {
         signature: signature.toString(),
         createdRef: widget.trajetModel.createdRef,
         created: DateTime.now(),
-        approbationDD: '-',
+        approbationDD: 'Approved',
         motifDD: '-',
         signatureDD: '-');
     await TrajetApi().updateData(trajetModel).then((value) {

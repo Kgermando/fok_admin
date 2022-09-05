@@ -31,6 +31,10 @@ import 'package:fokad_admin/src/pages/exploitations/fournisseurs/componets/detai
 import 'package:fokad_admin/src/pages/exploitations/productions/components/detail_production_exp.dart';
 import 'package:fokad_admin/src/pages/exploitations/fournisseurs/fournisseur_page.dart';
 import 'package:fokad_admin/src/pages/exploitations/productions/production_page.dart';
+import 'package:fokad_admin/src/pages/rh/agents/components/table_agents_actifs.dart';
+import 'package:fokad_admin/src/pages/rh/agents/components/table_agents_femme.dart';
+import 'package:fokad_admin/src/pages/rh/agents/components/table_agents_homme.dart';
+import 'package:fokad_admin/src/pages/rh/agents/components/table_agents_inactifs.dart';
 import 'package:fokad_admin/src/pages/rh/dd_rh/components/presences/detail_presence_agent.dart';
 import 'package:fokad_admin/src/pages/rh/dd_rh/components/users/detail._user.dart';
 import 'package:fokad_admin/src/pages/screens/help_screen.dart';
@@ -261,6 +265,10 @@ class RhRoutes {
   static const rhHistoriqueSalaire = "/rh-historique-salaire";
   static const rhTransportRest = "/rh-transport-rest";
   static const rhTransportRestDetail = "/rh-transport-rest-detail";
+  static const rhTableAgentActifs = "/rh-table-agent-actifs";
+  static const rhTableAgentInactifs = "/rh-table-agent-inactifs";
+  static const rhTableAgentFemme = "/rh-table-agent-femme";
+  static const rhTableAgentHomme = "/rh-table-agent-homme"; 
 }
 
 class BudgetRoutes {
@@ -538,6 +546,10 @@ final routes = <String, WidgetBuilder>{
   RhRoutes.rhTransportRest: (context) => const TransportRestaurationPage(),
   RhRoutes.rhTransportRestDetail: (context) =>
       const DetailTransportRestaurant(),
+  RhRoutes.rhTableAgentActifs: (context) => const TableAgentsActif(),
+  RhRoutes.rhTableAgentInactifs: (context) => const TableAgentsInactif(),
+  RhRoutes.rhTableAgentFemme: (context) => const TableAgentsFemme(), 
+  RhRoutes.rhTableAgentHomme: (context) => const TableAgentsHomme(),
 
   // Budgets
   BudgetRoutes.budgetDashboard: (context) => const DashboardBudget(),

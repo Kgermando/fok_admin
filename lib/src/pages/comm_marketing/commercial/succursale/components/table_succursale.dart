@@ -109,24 +109,7 @@ class _TableSuccursaleState extends State<TableSuccursale> {
               return resolver<PlutoFilterTypeContains>() as PlutoFilterType;
             },
           ),
-        ),
-        rowColorCallback: (rowColorContext) {
-          if (rowColorContext.row.cells.entries.elementAt(4).value.value ==
-                  'Unapproved' ||
-              rowColorContext.row.cells.entries.elementAt(5).value.value ==
-                  'Unapproved') {
-            return Colors.red.shade700;
-          } else if (rowColorContext.row.cells.entries
-                      .elementAt(4)
-                      .value
-                      .value ==
-                  'Approved' &&
-              rowColorContext.row.cells.entries.elementAt(5).value.value ==
-                  'Approved') {
-            return Colors.green.shade700;
-          }
-          return Colors.white;
-        },
+        ), 
       ),
     );
   }

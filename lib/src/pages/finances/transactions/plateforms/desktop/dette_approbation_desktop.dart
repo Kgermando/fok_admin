@@ -377,7 +377,7 @@ class _DetteApprobationDesktopState extends State<DetteApprobationDesktop> {
         signature: data.signature,
         createdRef: data.createdRef,
         created: DateTime.now(),
-        approbationDG: '-',
+        approbationDG: 'Approved',
         motifDG: '-',
         signatureDG: '-',
         approbationDD: approbationDD,

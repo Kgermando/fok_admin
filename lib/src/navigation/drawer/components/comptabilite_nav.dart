@@ -75,26 +75,26 @@ class _ComptabiliteNavState extends State<ComptabiliteNav> {
                     context, ComptabiliteRoutes.comptabiliteDashboard);
                 // Navigator.of(context).pop();
               }),
-        if (userRole <= 2)
-          DrawerWidget(
-              selected:
-                  widget.pageCurrente == ComptabiliteRoutes.comptabiliteDD,
-              icon: Icons.manage_accounts,
-              sizeIcon: 15.0,
-              title: 'Directeur departement',
-              style: bodyText2!,
-              badge: Badge(
-                showBadge: (itemCount >= 1) ? true : false,
-                badgeColor: Colors.teal,
-                badgeContent: Text('$itemCount',
-                    style:
-                        const TextStyle(fontSize: 10.0, color: Colors.white)),
-                child: const Icon(Icons.notifications),
-              ),
-              onTap: () {
-                Navigator.pushNamed(context, ComptabiliteRoutes.comptabiliteDD);
-                // Navigator.of(context).pop();
-              }),
+        // if (userRole <= 2)
+        //   DrawerWidget(
+        //       selected:
+        //           widget.pageCurrente == ComptabiliteRoutes.comptabiliteDD,
+        //       icon: Icons.manage_accounts,
+        //       sizeIcon: 15.0,
+        //       title: 'Directeur departement',
+        //       style: bodyText2!,
+        //       badge: Badge(
+        //         showBadge: (itemCount >= 1) ? true : false,
+        //         badgeColor: Colors.teal,
+        //         badgeContent: Text('$itemCount',
+        //             style:
+        //                 const TextStyle(fontSize: 10.0, color: Colors.white)),
+        //         child: const Icon(Icons.notifications),
+        //       ),
+        //       onTap: () {
+        //         Navigator.pushNamed(context, ComptabiliteRoutes.comptabiliteDD);
+        //         // Navigator.of(context).pop();
+        //       }),
         DrawerWidget(
             selected:
                 widget.pageCurrente == ComptabiliteRoutes.comptabiliteBalance,

@@ -153,10 +153,10 @@ class _BalanceComptabiliteState extends State<BalanceComptabilite> {
         signature: user!.matricule.toString(),
         created: DateTime.now(),
         isSubmit: 'false',
-        approbationDG: '-',
+        approbationDG: 'Approved',
         motifDG: '-',
         signatureDG: '-',
-        approbationDD: '-',
+        approbationDD: 'Approved',
         motifDD: '-',
         signatureDD: '-');
     await BalanceCompteApi().insertData(balance).then((value) {

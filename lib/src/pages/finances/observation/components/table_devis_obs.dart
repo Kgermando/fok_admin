@@ -24,8 +24,7 @@ class _TableDevisObsState extends State<TableDevisObs> {
   PlutoGridStateManager? stateManager;
   PlutoGridSelectingMode gridSelectingMode = PlutoGridSelectingMode.row;
 
-  int? id;
-
+ 
   @override
   initState() {
     agentsColumn();
@@ -49,7 +48,8 @@ class _TableDevisObsState extends State<TableDevisObs> {
   Future<void> getData() async {
     final userModel = await AuthApi().getUserId();
     List<DevisModel> devis = await DevisAPi().getAllData();
-    setState(() {
+    if (mounted) {
+      setState(() {
       matricule = userModel.matricule;
       departement = userModel.departement;
       servicesAffectation = userModel.servicesAffectation;
@@ -63,6 +63,7 @@ class _TableDevisObsState extends State<TableDevisObs> {
               element.approbationFin == "Approved")
           .toList();
     });
+    }
   }
 
   @override

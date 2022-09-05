@@ -350,7 +350,7 @@ class _AddProModelState extends State<AddProModel> {
         idProduct: idProductform,
         signature: signature,
         created: DateTime.now(),
-        approbationDD: '-',
+        approbationDD: 'Approved',
         motifDD: '-',
         signatureDD: '-');
     await ProduitModelApi().insertData(productModel).then((value) {

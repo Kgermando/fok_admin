@@ -356,7 +356,7 @@ class _UpdateProModelState extends State<UpdateProModel> {
         idProduct: idProductform,
         signature: signature.toString(),
         created: DateTime.now(),
-        approbationDD: '-',
+        approbationDD: 'Approved',
         motifDD: '-',
         signatureDD: '-');
     await ProduitModelApi().updateData(productModel).then((value) {

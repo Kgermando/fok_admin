@@ -118,24 +118,24 @@ class _DetailCompteResultatState extends State<DetailCompteResultat> {
                                     children: [
                                       pageDetail(data),
                                       const SizedBox(height: p10),
-                                      LayoutBuilder(
-                                          builder: (context, constraints) {
-                                        if (constraints.maxWidth >= 1100) {
-                                          return CompteResultatApprobationDesktop(
-                                              user: user,
-                                              compteResulatsModel: data);
-                                        } else if (constraints.maxWidth <
-                                                1100 &&
-                                            constraints.maxWidth >= 650) {
-                                          return CompteResultatApprobationTablet(
-                                              user: user,
-                                              compteResulatsModel: data);
-                                        } else {
-                                          return CompteResultatApprobationMobile(
-                                              user: user,
-                                              compteResulatsModel: data);
-                                        }
-                                      })
+                                      // LayoutBuilder(
+                                      //     builder: (context, constraints) {
+                                      //   if (constraints.maxWidth >= 1100) {
+                                      //     return CompteResultatApprobationDesktop(
+                                      //         user: user,
+                                      //         compteResulatsModel: data);
+                                      //   } else if (constraints.maxWidth <
+                                      //           1100 &&
+                                      //       constraints.maxWidth >= 650) {
+                                      //     return CompteResultatApprobationTablet(
+                                      //         user: user,
+                                      //         compteResulatsModel: data);
+                                      //   } else {
+                                      //     return CompteResultatApprobationMobile(
+                                      //         user: user,
+                                      //         compteResulatsModel: data);
+                                      //   }
+                                      // })
                                     ],
                                   ),
                                 ))

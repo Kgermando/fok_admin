@@ -287,10 +287,10 @@ class _DetteTransactionsState extends State<DetteTransactions> {
         signature: matricule.toString(),
         createdRef: DateTime.now(),
         created: DateTime.now(),
-        approbationDG: '-',
+        approbationDG: 'Approved',
         motifDG: '-',
         signatureDG: '-',
-        approbationDD: '-',
+        approbationDD: 'Approved',
         motifDD: '-',
         signatureDD: '-');
     await DetteApi().insertData(detteModel).then((value) {

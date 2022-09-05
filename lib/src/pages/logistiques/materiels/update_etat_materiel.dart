@@ -303,7 +303,7 @@ class _UpdateEtatMaterielState extends State<UpdateEtatMateriel> {
         signature: signature.toString(),
         createdRef: DateTime.now(),
         created: DateTime.now(),
-        approbationDD: '-',
+        approbationDD: 'Approved',
         motifDD: '-',
         signatureDD: '-');
     await EtatMaterielApi().updateData(etatMaterielModel).then((value) {

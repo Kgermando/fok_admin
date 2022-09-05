@@ -349,7 +349,7 @@ class _CreanceApprobationMobileState extends State<CreanceApprobationMobile> {
         signature: data.signature,
         createdRef: data.createdRef,
         created: data.created,
-        approbationDG: '-',
+        approbationDG: 'Approved',
         motifDG: '-',
         signatureDG: '-',
         approbationDD: approbationDD,

@@ -24,7 +24,7 @@ class _TableSalairesObsState extends State<TableSalairesObs> {
   PlutoGridStateManager? stateManager;
   PlutoGridSelectingMode gridSelectingMode = PlutoGridSelectingMode.row;
 
-  int? id;
+  
 
   @override
   initState() {
@@ -37,8 +37,8 @@ class _TableSalairesObsState extends State<TableSalairesObs> {
   List<PaiementSalaireModel> paiementSalaireList = [];
   Future<void> getData() async {
     var dataList = await PaiementSalaireApi().getAllData();
-
-    setState(() {
+    if (mounted) {
+      setState(() {
       paiementSalaireList = dataList
           .where((element) =>
               element.createdAt.month == DateTime.now().month &&
@@ -48,6 +48,7 @@ class _TableSalairesObsState extends State<TableSalairesObs> {
               element.approbationFin == "-")
           .toList();
     });
+    }
   }
 
   @override

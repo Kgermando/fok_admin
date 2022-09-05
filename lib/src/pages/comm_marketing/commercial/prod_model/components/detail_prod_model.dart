@@ -131,21 +131,21 @@ class _DetailProdModelState extends State<DetailProdModel> {
                                     children: [
                                       pageDetail(data!),
                                       const SizedBox(height: p10),
-                                      LayoutBuilder(
-                                          builder: (context, constraints) {
-                                        if (constraints.maxWidth >= 1100) {
-                                          return ProdModelApprobationDesktop(
-                                              user: user, productModel: data);
-                                        } else if (constraints.maxWidth <
-                                                1100 &&
-                                            constraints.maxWidth >= 650) {
-                                          return ProdModelApprobationTablet(
-                                              user: user, productModel: data);
-                                        } else {
-                                          return ProdModelApprobationMobile(
-                                              user: user, productModel: data);
-                                        }
-                                      })
+                                      // LayoutBuilder(
+                                      //     builder: (context, constraints) {
+                                      //   if (constraints.maxWidth >= 1100) {
+                                      //     return ProdModelApprobationDesktop(
+                                      //         user: user, productModel: data);
+                                      //   } else if (constraints.maxWidth <
+                                      //           1100 &&
+                                      //       constraints.maxWidth >= 650) {
+                                      //     return ProdModelApprobationTablet(
+                                      //         user: user, productModel: data);
+                                      //   } else {
+                                      //     return ProdModelApprobationMobile(
+                                      //         user: user, productModel: data);
+                                      //   }
+                                      // })
                                     ],
                                   ),
                                 ))

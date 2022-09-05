@@ -150,20 +150,20 @@ class _DetailAnguinState extends State<DetailAnguin> {
                                   children: [
                                     pageDetail(data!),
                                     const SizedBox(height: p10),
-                                    LayoutBuilder(
-                                        builder: (context, constraints) {
-                                      if (constraints.maxWidth >= 1100) {
-                                        return EnginApprobationDesktop(
-                                            engin: data, user: user);
-                                      } else if (constraints.maxWidth < 1100 &&
-                                          constraints.maxWidth >= 650) {
-                                        return EnginApprobationTablet(
-                                            engin: data, user: user);
-                                      } else {
-                                        return EnginApprobationMobile(
-                                            engin: data, user: user);
-                                      }
-                                    })
+                                    // LayoutBuilder(
+                                    //     builder: (context, constraints) {
+                                    //   if (constraints.maxWidth >= 1100) {
+                                    //     return EnginApprobationDesktop(
+                                    //         engin: data, user: user);
+                                    //   } else if (constraints.maxWidth < 1100 &&
+                                    //       constraints.maxWidth >= 650) {
+                                    //     return EnginApprobationTablet(
+                                    //         engin: data, user: user);
+                                    //   } else {
+                                    //     return EnginApprobationMobile(
+                                    //         engin: data, user: user);
+                                    //   }
+                                    // })
                                   ],
                                 )))
                               ],

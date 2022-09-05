@@ -349,7 +349,7 @@ class _BudgetApprobationMobileState extends State<BudgetApprobationMobile> {
         createdRef: data.createdRef,
         created: data.created,
         isSubmit: data.isSubmit,
-        approbationDG: '-',
+        approbationDG: 'Approved',
         motifDG: '-',
         signatureDG: '-',
         approbationDD: approbationDD,

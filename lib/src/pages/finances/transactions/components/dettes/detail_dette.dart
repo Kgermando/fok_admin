@@ -182,20 +182,20 @@ class _DetailDetteState extends State<DetailDette> {
                                   children: [
                                     pageDetail(data!),
                                     const SizedBox(height: p10),
-                                    LayoutBuilder(
-                                        builder: (context, constraints) {
-                                      if (constraints.maxWidth >= 1100) {
-                                        return DetteApprobationDesktop(
-                                            detteModel: data, user: user);
-                                      } else if (constraints.maxWidth < 1100 &&
-                                          constraints.maxWidth >= 650) {
-                                        return DetteApprobationTablet(
-                                            detteModel: data, user: user);
-                                      } else {
-                                        return DetteApprobationMobile(
-                                            detteModel: data, user: user);
-                                      }
-                                    })
+                                    // LayoutBuilder(
+                                    //     builder: (context, constraints) {
+                                    //   if (constraints.maxWidth >= 1100) {
+                                    //     return DetteApprobationDesktop(
+                                    //         detteModel: data, user: user);
+                                    //   } else if (constraints.maxWidth < 1100 &&
+                                    //       constraints.maxWidth >= 650) {
+                                    //     return DetteApprobationTablet(
+                                    //         detteModel: data, user: user);
+                                    //   } else {
+                                    //     return DetteApprobationMobile(
+                                    //         detteModel: data, user: user);
+                                    //   }
+                                    // })
                                   ],
                                 )))
                               ],

@@ -74,25 +74,25 @@ class _RhNavState extends State<RhNav> {
                 Navigator.pushNamed(context, RhRoutes.rhDashboard);
                 // Navigator.of(context).pop();
               }),
-        if (userRole <= 2)
-          DrawerWidget(
-              selected: widget.pageCurrente == RhRoutes.rhDD,
-              icon: Icons.manage_accounts,
-              sizeIcon: 20.0,
-              title: 'Directeur de département',
-              style: bodyText1!,
-              badge: Badge(
-                showBadge: (itemCount >= 1) ? true : false,
-                badgeColor: Colors.teal,
-                badgeContent: Text('$itemCount',
-                    style:
-                        const TextStyle(fontSize: 10.0, color: Colors.white)),
-                child: const Icon(Icons.notifications),
-              ),
-              onTap: () {
-                Navigator.pushNamed(context, RhRoutes.rhDD);
-                // Navigator.of(context).pop();
-              }),
+        // if (userRole <= 2)
+        //   DrawerWidget(
+        //       selected: widget.pageCurrente == RhRoutes.rhDD,
+        //       icon: Icons.manage_accounts,
+        //       sizeIcon: 20.0,
+        //       title: 'Directeur de département',
+        //       style: bodyText1!,
+        //       badge: Badge(
+        //         showBadge: (itemCount >= 1) ? true : false,
+        //         badgeColor: Colors.teal,
+        //         badgeContent: Text('$itemCount',
+        //             style:
+        //                 const TextStyle(fontSize: 10.0, color: Colors.white)),
+        //         child: const Icon(Icons.notifications),
+        //       ),
+        //       onTap: () {
+        //         Navigator.pushNamed(context, RhRoutes.rhDD);
+        //         // Navigator.of(context).pop();
+        //       }),
         if (userRole <= 3)
           DrawerWidget(
               selected: widget.pageCurrente == RhRoutes.rhAgent,

@@ -199,10 +199,10 @@ class _JournalLivreComptabiliteState extends State<JournalLivreComptabilite> {
         fin: dateRange!.end,
         signature: signature,
         created: DateTime.now(),
-        approbationDG: '-',
+        approbationDG: 'Approved',
         motifDG: '-',
         signatureDG: '-',
-        approbationDD: '-',
+        approbationDD: 'Approved',
         motifDD: '-',
         signatureDD: '-');
     await JournalLivreApi().insertData(journalLivre).then((value) {

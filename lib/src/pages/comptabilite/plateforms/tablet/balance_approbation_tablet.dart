@@ -379,7 +379,7 @@ class _BalanceApprobationTabletState extends State<BalanceApprobationTablet> {
         signature: data.signature,
         created: data.created,
         isSubmit: data.isSubmit,
-        approbationDG: '-',
+        approbationDG: 'Approved',
         motifDG: '-',
         signatureDG: '-',
         approbationDD: approbationDD,

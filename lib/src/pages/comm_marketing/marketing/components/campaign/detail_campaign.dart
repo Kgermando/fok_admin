@@ -121,36 +121,36 @@ class _DetailCampaignState extends State<DetailCampaign> {
                                     children: [
                                       pageDetail(data!),
                                       const SizedBox(height: p10),
-                                      LayoutBuilder(
-                                          builder: (context, constraints) {
-                                        if (constraints.maxWidth >= 1100) {
-                                          return CampagneApprobationDesktop(
-                                              departementsList:
-                                                  departementsList,
-                                              ligneBudgetaireList:
-                                                  ligneBudgetaireList,
-                                              user: user,
-                                              campaignModel: data);
-                                        } else if (constraints.maxWidth <
-                                                1100 &&
-                                            constraints.maxWidth >= 650) {
-                                          return CampagneApprobationTablet(
-                                              departementsList:
-                                                  departementsList,
-                                              ligneBudgetaireList:
-                                                  ligneBudgetaireList,
-                                              user: user,
-                                              campaignModel: data);
-                                        } else {
-                                          return CampagneApprobationMobile(
-                                              departementsList:
-                                                  departementsList,
-                                              ligneBudgetaireList:
-                                                  ligneBudgetaireList,
-                                              user: user,
-                                              campaignModel: data);
-                                        }
-                                      })
+                                      // LayoutBuilder(
+                                      //     builder: (context, constraints) {
+                                      //   if (constraints.maxWidth >= 1100) {
+                                      //     return CampagneApprobationDesktop(
+                                      //         departementsList:
+                                      //             departementsList,
+                                      //         ligneBudgetaireList:
+                                      //             ligneBudgetaireList,
+                                      //         user: user,
+                                      //         campaignModel: data);
+                                      //   } else if (constraints.maxWidth <
+                                      //           1100 &&
+                                      //       constraints.maxWidth >= 650) {
+                                      //     return CampagneApprobationTablet(
+                                      //         departementsList:
+                                      //             departementsList,
+                                      //         ligneBudgetaireList:
+                                      //             ligneBudgetaireList,
+                                      //         user: user,
+                                      //         campaignModel: data);
+                                      //   } else {
+                                      //     return CampagneApprobationMobile(
+                                      //         departementsList:
+                                      //             departementsList,
+                                      //         ligneBudgetaireList:
+                                      //             ligneBudgetaireList,
+                                      //         user: user,
+                                      //         campaignModel: data);
+                                      //   }
+                                      // })
                                     ],
                                   ),
                                 ))

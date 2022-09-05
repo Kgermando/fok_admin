@@ -202,24 +202,24 @@ class _DetailDepartmentBudgetState extends State<DetailDepartmentBudget> {
                                     children: [
                                       pageDetail(data!),
                                       const SizedBox(height: p10),
-                                      LayoutBuilder(
-                                          builder: (context, constraints) {
-                                        if (constraints.maxWidth >= 1100) {
-                                          return BudgetApprobationDesktop(
-                                              departementBudgetModel: data,
-                                              user: user);
-                                        } else if (constraints.maxWidth <
-                                                1100 &&
-                                            constraints.maxWidth >= 650) {
-                                          return BudgetApprobationTablet(
-                                              departementBudgetModel: data,
-                                              user: user);
-                                        } else {
-                                          return BudgetApprobationMobile(
-                                              departementBudgetModel: data,
-                                              user: user);
-                                        }
-                                      })
+                                      // LayoutBuilder(
+                                      //     builder: (context, constraints) {
+                                      //   if (constraints.maxWidth >= 1100) {
+                                      //     return BudgetApprobationDesktop(
+                                      //         departementBudgetModel: data,
+                                      //         user: user);
+                                      //   } else if (constraints.maxWidth <
+                                      //           1100 &&
+                                      //       constraints.maxWidth >= 650) {
+                                      //     return BudgetApprobationTablet(
+                                      //         departementBudgetModel: data,
+                                      //         user: user);
+                                      //   } else {
+                                      //     return BudgetApprobationMobile(
+                                      //         departementBudgetModel: data,
+                                      //         user: user);
+                                      //   }
+                                      // })
                                     ],
                                   ),
                                 ))
@@ -889,10 +889,10 @@ class _DetailDepartmentBudgetState extends State<DetailDepartmentBudget> {
         createdRef: data.createdRef,
         created: data.created,
         isSubmit: 'true',
-        approbationDG: '-',
+        approbationDG: 'Approved',
         motifDG: '-',
         signatureDG: '-',
-        approbationDD: '-',
+        approbationDD: 'Approved',
         motifDD: '-',
         signatureDD: '-');
     await DepeartementBudgetApi()

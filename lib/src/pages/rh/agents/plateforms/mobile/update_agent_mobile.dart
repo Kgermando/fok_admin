@@ -41,7 +41,9 @@ class UpdateAgentMobile extends StatefulWidget {
       required this.serviceAffectationEXp,
       required this.serviceAffectationComm,
       required this.serviceAffectationLog,
-      required this.agentModel, required this.fonctionActionnaireList, required this.serviceAffectationActionnaire})
+      required this.agentModel,
+      required this.fonctionActionnaireList,
+      required this.serviceAffectationActionnaire})
       : super(key: key);
   final List<String> departementList;
   final List<String> typeContratList;
@@ -1144,10 +1146,10 @@ class _UpdateAgentMobileState extends State<UpdateAgentMobile> {
             : salaireController.text,
         signature: user!.matricule.toString(),
         created: DateTime.now(),
-        approbationDG: '-',
+        approbationDG: 'Approved',
         motifDG: '-',
         signatureDG: '-',
-        approbationDD: '-',
+        approbationDD: 'Approved',
         motifDD: '-',
         signatureDD: '-');
 

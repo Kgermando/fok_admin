@@ -348,7 +348,7 @@ class _DetteApprobationMobileState extends State<DetteApprobationMobile> {
         signature: data.signature,
         createdRef: data.createdRef,
         created: DateTime.now(),
-        approbationDG: '-',
+        approbationDG: 'Approved',
         motifDG: '-',
         signatureDG: '-',
         approbationDD: approbationDD,

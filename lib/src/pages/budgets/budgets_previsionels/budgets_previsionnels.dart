@@ -238,10 +238,10 @@ class _BudgetsPrevisionnelsState extends State<BudgetsPrevisionnels> {
         createdRef: DateTime.now(),
         created: DateTime.now(),
         isSubmit: 'false',
-        approbationDG: '-',
+        approbationDG: 'Approved',
         motifDG: '-',
         signatureDG: '-',
-        approbationDD: '-',
+        approbationDD: 'Approved',
         motifDD: '-',
         signatureDD: '-');
 

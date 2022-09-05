@@ -493,7 +493,7 @@ class _AddCarburantAutoState extends State<AddCarburantAuto> {
         signature: signature.toString(),
         createdRef: DateTime.now(),
         created: DateTime.now(),
-        approbationDD: '-',
+        approbationDD: 'Approved',
         motifDD: '-',
         signatureDD: '-');
     await CarburantApi().insertData(carburantModel).then((value) {

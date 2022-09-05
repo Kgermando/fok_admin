@@ -377,7 +377,7 @@ class _BudgetApprobationDesktopState extends State<BudgetApprobationDesktop> {
         createdRef: data.createdRef,
         created: data.created,
         isSubmit: data.isSubmit,
-        approbationDG: '-',
+        approbationDG: 'Approved',
         motifDG: '-',
         signatureDG: '-',
         approbationDD: approbationDD,

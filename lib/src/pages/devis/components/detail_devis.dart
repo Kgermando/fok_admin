@@ -166,32 +166,32 @@ class _DetailDevisState extends State<DetailDevis> {
                                   children: [
                                     pageDetail(data!),
                                     const SizedBox(height: p10),
-                                    LayoutBuilder(
-                                        builder: (context, constraints) {
-                                      if (constraints.maxWidth >= 1100) {
-                                        return DevisApprobationDesktop(
-                                            departementsList: departementsList,
-                                            ligneBudgetaireList:
-                                                ligneBudgetaireList,
-                                            user: user,
-                                            devisModel: data);
-                                      } else if (constraints.maxWidth < 1100 &&
-                                          constraints.maxWidth >= 650) {
-                                        return DevisApprobationTablet(
-                                            departementsList: departementsList,
-                                            ligneBudgetaireList:
-                                                ligneBudgetaireList,
-                                            user: user,
-                                            devisModel: data);
-                                      } else {
-                                        return DevisApprobationMobile(
-                                            departementsList: departementsList,
-                                            ligneBudgetaireList:
-                                                ligneBudgetaireList,
-                                            user: user,
-                                            devisModel: data);
-                                      }
-                                    })
+                                    // LayoutBuilder(
+                                    //     builder: (context, constraints) {
+                                    //   if (constraints.maxWidth >= 1100) {
+                                    //     return DevisApprobationDesktop(
+                                    //         departementsList: departementsList,
+                                    //         ligneBudgetaireList:
+                                    //             ligneBudgetaireList,
+                                    //         user: user,
+                                    //         devisModel: data);
+                                    //   } else if (constraints.maxWidth < 1100 &&
+                                    //       constraints.maxWidth >= 650) {
+                                    //     return DevisApprobationTablet(
+                                    //         departementsList: departementsList,
+                                    //         ligneBudgetaireList:
+                                    //             ligneBudgetaireList,
+                                    //         user: user,
+                                    //         devisModel: data);
+                                    //   } else {
+                                    //     return DevisApprobationMobile(
+                                    //         departementsList: departementsList,
+                                    //         ligneBudgetaireList:
+                                    //             ligneBudgetaireList,
+                                    //         user: user,
+                                    //         devisModel: data);
+                                    //   }
+                                    // })
                                   ],
                                 )))
                               ],
@@ -784,7 +784,7 @@ class _DetailDevisState extends State<DetailDevis> {
         title: data.title,
         priority: data.priority,
         departement: data.departement,
-        observation: 'false',
+        observation: 'true',
         signature: data.signature,
         createdRef: data.createdRef,
         created: DateTime.now(),

@@ -43,7 +43,9 @@ class AddAgentDesktop extends StatefulWidget {
       required this.serviceAffectationCompt,
       required this.serviceAffectationEXp,
       required this.serviceAffectationComm,
-      required this.serviceAffectationLog, required this.fonctionActionnaireList, required this.serviceAffectationActionnaire})
+      required this.serviceAffectationLog,
+      required this.fonctionActionnaireList,
+      required this.serviceAffectationActionnaire})
       : super(key: key);
   final List<String> departementList;
   final List<String> typeContratList;
@@ -752,7 +754,7 @@ class _AddAgentDesktopState extends State<AddAgentDesktop> {
               servAffectList = widget.serviceAffectationActionnaire;
               fonctionOccupe = fonctionList.first;
               servicesAffectation = widget.serviceAffectationActionnaire.first;
-            }  else if (departement == 'Administration') {
+            } else if (departement == 'Administration') {
               matricule = "${fokad}ADM$date-${agentCount.count + 1}";
               fonctionList = widget.fonctionAdminList;
               servAffectList = widget.serviceAffectationAdmin;
@@ -1044,7 +1046,7 @@ class _AddAgentDesktopState extends State<AddAgentDesktop> {
         });
   }
 
-  Future submit() async { 
+  Future submit() async {
     final agentModel = AgentModel(
         nom: (nomController.text == '') ? '-' : nomController.text,
         postNom: (postNomController.text == '') ? '-' : postNomController.text,
@@ -1092,10 +1094,10 @@ class _AddAgentDesktopState extends State<AddAgentDesktop> {
         salaire: (salaireController.text == '') ? '-' : salaireController.text,
         signature: user!.matricule.toString(),
         created: DateTime.now(),
-        approbationDG: '-',
+        approbationDG: 'Approved',
         motifDG: '-',
         signatureDG: '-',
-        approbationDD: '-',
+        approbationDD: 'Approved',
         motifDD: '-',
         signatureDD: '-');
 

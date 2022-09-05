@@ -110,20 +110,20 @@ class _DetailMobilierState extends State<DetailMobilier> {
                                   children: [
                                     pageDetail(data!),
                                     const SizedBox(height: p10),
-                                    LayoutBuilder(
-                                        builder: (context, constraints) {
-                                      if (constraints.maxWidth >= 1100) {
-                                        return MobilierApprobationDesktop(
-                                            mobilierModel: data, user: user);
-                                      } else if (constraints.maxWidth < 1100 &&
-                                          constraints.maxWidth >= 650) {
-                                        return MobilierApprobationTablet(
-                                            mobilierModel: data, user: user);
-                                      } else {
-                                        return MobilierApprobationMobile(
-                                            mobilierModel: data, user: user);
-                                      }
-                                    })
+                                    // LayoutBuilder(
+                                    //     builder: (context, constraints) {
+                                    //   if (constraints.maxWidth >= 1100) {
+                                    //     return MobilierApprobationDesktop(
+                                    //         mobilierModel: data, user: user);
+                                    //   } else if (constraints.maxWidth < 1100 &&
+                                    //       constraints.maxWidth >= 650) {
+                                    //     return MobilierApprobationTablet(
+                                    //         mobilierModel: data, user: user);
+                                    //   } else {
+                                    //     return MobilierApprobationMobile(
+                                    //         mobilierModel: data, user: user);
+                                    //   }
+                                    // })
                                   ],
                                 )))
                               ],

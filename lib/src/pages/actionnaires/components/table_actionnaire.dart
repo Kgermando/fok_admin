@@ -99,7 +99,7 @@ class _TableActionnaireState extends State<TableActionnaire> {
               final dataId = tapEvent.row!.cells.values;
               final idPlutoRow = dataId.elementAt(0);
 
-              Navigator.pushNamed(context, ActionnaireRoute.actionnairePage,
+              Navigator.pushNamed(context, ActionnaireRoute.actionnaireDetail, 
                   arguments: idPlutoRow.value);
             },
             onLoaded: (PlutoGridOnLoadedEvent event) {

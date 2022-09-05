@@ -117,23 +117,23 @@ class _DetailEtatMaterielState extends State<DetailEtatMateriel> {
                                   children: [
                                     pageDetail(data!),
                                     const SizedBox(height: p10),
-                                    LayoutBuilder(
-                                        builder: (context, constraints) {
-                                      if (constraints.maxWidth >= 1100) {
-                                        return EtatMaterielApprobationDesktop(
-                                            etatMaterielModel: data,
-                                            user: user);
-                                      } else if (constraints.maxWidth < 1100 &&
-                                          constraints.maxWidth >= 650) {
-                                        return EtatMaterielApprobationTablet(
-                                            etatMaterielModel: data,
-                                            user: user);
-                                      } else {
-                                        return EtatMaterielApprobationMobile(
-                                            etatMaterielModel: data,
-                                            user: user);
-                                      }
-                                    })
+                                    // LayoutBuilder(
+                                    //     builder: (context, constraints) {
+                                    //   if (constraints.maxWidth >= 1100) {
+                                    //     return EtatMaterielApprobationDesktop(
+                                    //         etatMaterielModel: data,
+                                    //         user: user);
+                                    //   } else if (constraints.maxWidth < 1100 &&
+                                    //       constraints.maxWidth >= 650) {
+                                    //     return EtatMaterielApprobationTablet(
+                                    //         etatMaterielModel: data,
+                                    //         user: user);
+                                    //   } else {
+                                    //     return EtatMaterielApprobationMobile(
+                                    //         etatMaterielModel: data,
+                                    //         user: user);
+                                    //   }
+                                    // })
                                   ],
                                 )))
                               ],

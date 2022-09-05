@@ -53,10 +53,10 @@ class _JournalLivreDetailState extends State<JournalLivreDetail> {
       fin: DateTime.now(),
       signature: '-',
       created: DateTime.now(),
-      approbationDG: '-',
+      approbationDG: 'Approved',
       motifDG: '-',
       signatureDG: '-',
-      approbationDD: '-',
+      approbationDD: 'Approved',
       motifDD: '-',
       signatureDD: '-');
   UserModel user = UserModel(
@@ -321,19 +321,19 @@ class _JournalLivreDetailState extends State<JournalLivreDetail> {
                                 }),
                           ),
                           const SizedBox(height: p20),
-                          LayoutBuilder(builder: (context, constraints) {
-                            if (constraints.maxWidth >= 1100) {
-                              return JournalApprobationDesktop(
-                                  user: user, journalLivreModel: journalLivre);
-                            } else if (constraints.maxWidth < 1100 &&
-                                constraints.maxWidth >= 650) {
-                              return JournalApprobationTablet(
-                                  user: user, journalLivreModel: journalLivre);
-                            } else {
-                              return JournalApprobationMobile(
-                                  user: user, journalLivreModel: journalLivre);
-                            }
-                          })
+                          // LayoutBuilder(builder: (context, constraints) {
+                          //   if (constraints.maxWidth >= 1100) {
+                          //     return JournalApprobationDesktop(
+                          //         user: user, journalLivreModel: journalLivre);
+                          //   } else if (constraints.maxWidth < 1100 &&
+                          //       constraints.maxWidth >= 650) {
+                          //     return JournalApprobationTablet(
+                          //         user: user, journalLivreModel: journalLivre);
+                          //   } else {
+                          //     return JournalApprobationMobile(
+                          //         user: user, journalLivreModel: journalLivre);
+                          //   }
+                          // })
                         ],
                       )),
                     ],

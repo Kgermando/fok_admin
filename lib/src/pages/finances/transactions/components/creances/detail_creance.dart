@@ -182,20 +182,20 @@ class _DetailCreanceState extends State<DetailCreance> {
                                   children: [
                                     pageDetail(data!),
                                     const SizedBox(height: p10),
-                                    LayoutBuilder(
-                                        builder: (context, constraints) {
-                                      if (constraints.maxWidth >= 1100) {
-                                        return CreanceApprobationDesktop(
-                                            creanceModel: data, user: user);
-                                      } else if (constraints.maxWidth < 1100 &&
-                                          constraints.maxWidth >= 650) {
-                                        return CreanceApprobationTablet(
-                                            creanceModel: data, user: user);
-                                      } else {
-                                        return CreanceApprobationMobile(
-                                            creanceModel: data, user: user);
-                                      }
-                                    })
+                                    // LayoutBuilder(
+                                    //     builder: (context, constraints) {
+                                    //   if (constraints.maxWidth >= 1100) {
+                                    //     return CreanceApprobationDesktop(
+                                    //         creanceModel: data, user: user);
+                                    //   } else if (constraints.maxWidth < 1100 &&
+                                    //       constraints.maxWidth >= 650) {
+                                    //     return CreanceApprobationTablet(
+                                    //         creanceModel: data, user: user);
+                                    //   } else {
+                                    //     return CreanceApprobationMobile(
+                                    //         creanceModel: data, user: user);
+                                    //   }
+                                    // })
                                   ],
                                 )))
                               ],

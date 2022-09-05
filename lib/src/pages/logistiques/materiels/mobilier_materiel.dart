@@ -293,7 +293,7 @@ class _MobilierMaterielState extends State<MobilierMateriel> {
         signature: signature.toString(),
         createdRef: DateTime.now(),
         created: DateTime.now(),
-        approbationDD: '-',
+        approbationDD: 'Approved',
         motifDD: '-',
         signatureDD: '-');
     await MobilierApi().insertData(mobilierModel).then((value) {

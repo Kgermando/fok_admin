@@ -284,10 +284,10 @@ class _CreanceTransactionsState extends State<CreanceTransactions> {
         signature: matricule.toString(),
         createdRef: DateTime.now(),
         created: DateTime.now(),
-        approbationDG: '-',
+        approbationDG: 'Approved',
         motifDG: '-',
         signatureDG: '-',
-        approbationDD: '-',
+        approbationDD: 'Approved',
         motifDD: '-',
         signatureDD: '-');
     await CreanceApi().insertData(creanceModel).then((value) {

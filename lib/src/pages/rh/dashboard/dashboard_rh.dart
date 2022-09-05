@@ -162,7 +162,7 @@ class _DashboardRhState extends State<DashboardRh> {
                                 DashNumberRHWidget(
                                     gestureTapCallback: () {
                                       Navigator.pushNamed(
-                                          context, RhRoutes.rhAgent);
+                                          context, RhRoutes.rhTableAgentActifs);
                                     },
                                     number: '$agentInactifCount',
                                     title: 'Agents inactifs',
@@ -171,7 +171,7 @@ class _DashboardRhState extends State<DashboardRh> {
                                 DashNumberRHWidget(
                                     gestureTapCallback: () {
                                       Navigator.pushNamed(
-                                          context, RhRoutes.rhAgent);
+                                          context, RhRoutes.rhTableAgentFemme);
                                     },
                                     number: '$agentFemmeCount',
                                     title: 'Femmes',
@@ -180,7 +180,7 @@ class _DashboardRhState extends State<DashboardRh> {
                                 DashNumberRHWidget(
                                     gestureTapCallback: () {
                                       Navigator.pushNamed(
-                                          context, RhRoutes.rhAgent);
+                                          context, RhRoutes.rhTableAgentHomme);
                                     },
                                     number: '$agentHommeCount',
                                     title: 'Hommes',

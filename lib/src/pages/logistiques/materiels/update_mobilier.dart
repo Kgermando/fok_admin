@@ -312,7 +312,7 @@ class _UpdateMobilierState extends State<UpdateMobilier> {
         signature: signature.toString(),
         createdRef: widget.mobilierModel.createdRef,
         created: widget.mobilierModel.created,
-        approbationDD: '-',
+        approbationDD: 'Approved',
         motifDD: '-',
         signatureDD: '-');
     await MobilierApi().updateData(mobilierModel).then((value) {

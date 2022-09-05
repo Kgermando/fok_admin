@@ -1062,10 +1062,10 @@ class _AddCompteResultatState extends State<AddCompteResultat> {
         signature: user!.matricule.toString(),
         createdRef: DateTime.now(),
         created: DateTime.now(),
-        approbationDG: '-',
+        approbationDG: 'Approved',
         motifDG: '-',
         signatureDG: '-',
-        approbationDD: '-',
+        approbationDD: 'Approved',
         motifDD: '-',
         signatureDD: '-');
     await CompteResultatApi().insertData(compteResulatsModel).then((value) {

@@ -546,10 +546,10 @@ class _BalanceTabletState extends State<BalanceTablet> {
         signature: data.signature,
         created: DateTime.now(),
         isSubmit: 'true',
-        approbationDG: '-',
+        approbationDG: 'Approved',
         motifDG: '-',
         signatureDG: '-',
-        approbationDD: '-',
+        approbationDD: 'Approved',
         motifDD: '-',
         signatureDD: '-');
     await BalanceCompteApi().updateData(balanceCompteModel).then((value) {

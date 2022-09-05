@@ -75,25 +75,25 @@ class _LogistiqueNavState extends State<LogistiqueNav> {
                 Navigator.pushNamed(context, LogistiqueRoutes.logDashboard);
                 // Navigator.of(context).pop();
               }),
-        if (userRole <= 2)
-          DrawerWidget(
-              selected: widget.pageCurrente == LogistiqueRoutes.logDD,
-              icon: Icons.manage_accounts,
-              sizeIcon: 20.0,
-              title: 'Directeur de departement',
-              style: bodyText1!,
-              badge: Badge(
-                showBadge: (itemCount >= 1) ? true : false,
-                badgeColor: Colors.teal,
-                badgeContent: Text('$itemCount',
-                    style:
-                        const TextStyle(fontSize: 10.0, color: Colors.white)),
-                child: const Icon(Icons.notifications),
-              ),
-              onTap: () {
-                Navigator.pushNamed(context, LogistiqueRoutes.logDD);
-                // Navigator.of(context).pop();
-              }),
+        // if (userRole <= 2)
+        //   DrawerWidget(
+        //       selected: widget.pageCurrente == LogistiqueRoutes.logDD,
+        //       icon: Icons.manage_accounts,
+        //       sizeIcon: 20.0,
+        //       title: 'Directeur de departement',
+        //       style: bodyText1!,
+        //       badge: Badge(
+        //         showBadge: (itemCount >= 1) ? true : false,
+        //         badgeColor: Colors.teal,
+        //         badgeContent: Text('$itemCount',
+        //             style:
+        //                 const TextStyle(fontSize: 10.0, color: Colors.white)),
+        //         child: const Icon(Icons.notifications),
+        //       ),
+        //       onTap: () {
+        //         Navigator.pushNamed(context, LogistiqueRoutes.logDD);
+        //         // Navigator.of(context).pop();
+        //       }),
         ExpansionTile(
           leading: const Icon(Icons.car_rental, size: 20.0),
           title: Text('Automobile', style: bodyText1),

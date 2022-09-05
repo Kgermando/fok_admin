@@ -1119,10 +1119,10 @@ class _UpdateCompteResultatState extends State<UpdateCompteResultat> {
         signature: user!.matricule.toString(),
         createdRef: widget.compteResulatsModel.createdRef,
         created: DateTime.now(),
-        approbationDG: '-',
+        approbationDG: 'Approved',
         motifDG: '-',
         signatureDG: '-',
-        approbationDD: '-',
+        approbationDD: 'Approved',
         motifDD: '-',
         signatureDD: '-');
     await CompteResultatApi().updateData(compteResulatsModel).then((value) {

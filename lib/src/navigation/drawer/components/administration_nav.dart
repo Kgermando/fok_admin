@@ -99,143 +99,143 @@ class _AdministrationNavState extends State<AdministrationNav> {
               Navigator.pushNamed(context, AdminRoutes.adminDashboard);
               // Navigator.of(context).pop();
             }),
-        DrawerWidget(
-            selected: widget.pageCurrente == AdminRoutes.adminBudget,
-            icon: Icons.fact_check,
-            sizeIcon: 20.0,
-            title: 'Budgets',
-            style: bodyText1,
-            badge: Badge(
-              showBadge: (budgetCount >= 1) ? true : false,
-              badgeColor: Colors.teal,
-              badgeContent: Text('$budgetCount',
-                  style: const TextStyle(fontSize: 10.0, color: Colors.white)),
-              child: const Icon(Icons.notifications),
-            ),
-            onTap: () {
-              Navigator.pushNamed(context, AdminRoutes.adminBudget);
-              // Navigator.of(context).pop();
-            }),
-        DrawerWidget(
-            selected: widget.pageCurrente == AdminRoutes.adminFinance,
-            icon: Icons.account_balance,
-            sizeIcon: 20.0,
-            title: 'Finances',
-            style: bodyText1,
-            badge: Badge(
-              showBadge: (financeCount >= 1) ? true : false,
-              badgeColor: Colors.teal,
-              badgeContent: Text('$financeCount',
-                  style: const TextStyle(fontSize: 10.0, color: Colors.white)),
-              child: const Icon(Icons.notifications),
-            ),
-            onTap: () {
-              Navigator.pushNamed(context, AdminRoutes.adminFinance);
-              // Navigator.of(context).pop();
-            }),
-        DrawerWidget(
-            selected: widget.pageCurrente == AdminRoutes.adminComptabilite,
-            icon: Icons.table_view,
-            sizeIcon: 20.0,
-            title: 'Comptabilités',
-            style: bodyText1,
-            badge: Badge(
-              showBadge: (comptabiliteCount >= 1) ? true : false,
-              badgeColor: Colors.teal,
-              badgeContent: Text('$comptabiliteCount',
-                  style: const TextStyle(fontSize: 10.0, color: Colors.white)),
-              child: const Icon(Icons.notifications),
-            ),
-            onTap: () {
-              Navigator.pushNamed(context, AdminRoutes.adminComptabilite);
-              // Navigator.of(context).pop();
-            }),
-        DrawerWidget(
-            selected: widget.pageCurrente == AdminRoutes.adminRH,
-            icon: Icons.group,
-            sizeIcon: 20.0,
-            title: 'RH',
-            style: bodyText1,
-            badge: Badge(
-              showBadge: (rhCount >= 1) ? true : false,
-              badgeColor: Colors.teal,
-              badgeContent: Text('$rhCount',
-                  style: const TextStyle(fontSize: 10.0, color: Colors.white)),
-              child: const Icon(Icons.notifications),
-            ),
-            onTap: () {
-              Navigator.pushNamed(context, AdminRoutes.adminRH);
-            }),
-        DrawerWidget(
-            selected: widget.pageCurrente == AdminRoutes.adminExploitation,
-            icon: Icons.work,
-            sizeIcon: 20.0,
-            title: 'Exploitations',
-            style: bodyText1,
-            badge: Badge(
-              showBadge: (exploitationCount >= 1) ? true : false,
-              badgeColor: Colors.teal,
-              badgeContent: Text('$exploitationCount',
-                  style: const TextStyle(fontSize: 10.0, color: Colors.white)),
-              child: const Icon(Icons.notifications),
-            ),
-            onTap: () {
-              Navigator.pushNamed(context, AdminRoutes.adminExploitation);
-              // Navigator.of(context).pop();
-            }),
-        DrawerWidget(
-            selected: widget.pageCurrente == AdminRoutes.adminCommMarketing,
-            icon: Icons.add_business,
-            sizeIcon: 20.0,
-            title: 'Comm. & Marketing',
-            style: bodyText1,
-            badge: Badge(
-              showBadge: (commMarketingCount >= 1) ? true : false,
-              badgeColor: Colors.teal,
-              badgeContent: Text('$commMarketingCount',
-                  style: const TextStyle(fontSize: 10.0, color: Colors.white)),
-              child: const Icon(Icons.notifications),
-            ),
-            onTap: () {
-              Navigator.pushNamed(context, AdminRoutes.adminCommMarketing);
-              // Navigator.of(context).pop();
-            }),
-        DrawerWidget(
-            selected: widget.pageCurrente == AdminRoutes.adminLogistique,
-            icon: Icons.home_work,
-            sizeIcon: 20.0,
-            title: 'Logistiques',
-            style: bodyText1,
-            badge: Badge(
-              showBadge: (logistiqueCount >= 1) ? true : false,
-              badgeColor: Colors.teal,
-              badgeContent: Text('$logistiqueCount',
-                  style: const TextStyle(fontSize: 10.0, color: Colors.white)),
-              child: const Icon(Icons.notifications),
-            ),
-            onTap: () {
-              Navigator.pushNamed(context, AdminRoutes.adminLogistique);
-              // Navigator.of(context).pop();
-            }),
-        DrawerWidget(
-            selected: widget.pageCurrente == RhRoutes.rhPerformence,
-            icon: Icons.multiline_chart_sharp,
-            sizeIcon: 20.0,
-            title: 'Performences',
-            style: bodyText1,
-            onTap: () {
-              Navigator.pushNamed(context, RhRoutes.rhPerformence);
-            }),
-        DrawerWidget(
-            selected: widget.pageCurrente == ArchiveRoutes.archives,
-            icon: Icons.archive,
-            sizeIcon: 20.0,
-            title: 'Archives',
-            style: bodyLarge!,
-            onTap: () {
-              Navigator.pushNamed(context, ArchiveRoutes.archives);
-              // Navigator.of(context).pop();
-            }),
+        // DrawerWidget(
+        //     selected: widget.pageCurrente == AdminRoutes.adminBudget,
+        //     icon: Icons.fact_check,
+        //     sizeIcon: 20.0,
+        //     title: 'Budgets',
+        //     style: bodyText1,
+        //     badge: Badge(
+        //       showBadge: (budgetCount >= 1) ? true : false,
+        //       badgeColor: Colors.teal,
+        //       badgeContent: Text('$budgetCount',
+        //           style: const TextStyle(fontSize: 10.0, color: Colors.white)),
+        //       child: const Icon(Icons.notifications),
+        //     ),
+        //     onTap: () {
+        //       Navigator.pushNamed(context, AdminRoutes.adminBudget);
+        //       // Navigator.of(context).pop();
+        //     }),
+        // DrawerWidget(
+        //     selected: widget.pageCurrente == AdminRoutes.adminFinance,
+        //     icon: Icons.account_balance,
+        //     sizeIcon: 20.0,
+        //     title: 'Finances',
+        //     style: bodyText1,
+        //     badge: Badge(
+        //       showBadge: (financeCount >= 1) ? true : false,
+        //       badgeColor: Colors.teal,
+        //       badgeContent: Text('$financeCount',
+        //           style: const TextStyle(fontSize: 10.0, color: Colors.white)),
+        //       child: const Icon(Icons.notifications),
+        //     ),
+        //     onTap: () {
+        //       Navigator.pushNamed(context, AdminRoutes.adminFinance);
+        //       // Navigator.of(context).pop();
+        //     }),
+        // DrawerWidget(
+        //     selected: widget.pageCurrente == AdminRoutes.adminComptabilite,
+        //     icon: Icons.table_view,
+        //     sizeIcon: 20.0,
+        //     title: 'Comptabilités',
+        //     style: bodyText1,
+        //     badge: Badge(
+        //       showBadge: (comptabiliteCount >= 1) ? true : false,
+        //       badgeColor: Colors.teal,
+        //       badgeContent: Text('$comptabiliteCount',
+        //           style: const TextStyle(fontSize: 10.0, color: Colors.white)),
+        //       child: const Icon(Icons.notifications),
+        //     ),
+        //     onTap: () {
+        //       Navigator.pushNamed(context, AdminRoutes.adminComptabilite);
+        //       // Navigator.of(context).pop();
+        //     }),
+        // DrawerWidget(
+        //     selected: widget.pageCurrente == AdminRoutes.adminRH,
+        //     icon: Icons.group,
+        //     sizeIcon: 20.0,
+        //     title: 'RH',
+        //     style: bodyText1,
+        //     badge: Badge(
+        //       showBadge: (rhCount >= 1) ? true : false,
+        //       badgeColor: Colors.teal,
+        //       badgeContent: Text('$rhCount',
+        //           style: const TextStyle(fontSize: 10.0, color: Colors.white)),
+        //       child: const Icon(Icons.notifications),
+        //     ),
+        //     onTap: () {
+        //       Navigator.pushNamed(context, AdminRoutes.adminRH);
+        //     }),
+        // DrawerWidget(
+        //     selected: widget.pageCurrente == AdminRoutes.adminExploitation,
+        //     icon: Icons.work,
+        //     sizeIcon: 20.0,
+        //     title: 'Exploitations',
+        //     style: bodyText1,
+        //     badge: Badge(
+        //       showBadge: (exploitationCount >= 1) ? true : false,
+        //       badgeColor: Colors.teal,
+        //       badgeContent: Text('$exploitationCount',
+        //           style: const TextStyle(fontSize: 10.0, color: Colors.white)),
+        //       child: const Icon(Icons.notifications),
+        //     ),
+        //     onTap: () {
+        //       Navigator.pushNamed(context, AdminRoutes.adminExploitation);
+        //       // Navigator.of(context).pop();
+        //     }),
+        // DrawerWidget(
+        //     selected: widget.pageCurrente == AdminRoutes.adminCommMarketing,
+        //     icon: Icons.add_business,
+        //     sizeIcon: 20.0,
+        //     title: 'Comm. & Marketing',
+        //     style: bodyText1,
+        //     badge: Badge(
+        //       showBadge: (commMarketingCount >= 1) ? true : false,
+        //       badgeColor: Colors.teal,
+        //       badgeContent: Text('$commMarketingCount',
+        //           style: const TextStyle(fontSize: 10.0, color: Colors.white)),
+        //       child: const Icon(Icons.notifications),
+        //     ),
+        //     onTap: () {
+        //       Navigator.pushNamed(context, AdminRoutes.adminCommMarketing);
+        //       // Navigator.of(context).pop();
+        //     }),
+        // DrawerWidget(
+        //     selected: widget.pageCurrente == AdminRoutes.adminLogistique,
+        //     icon: Icons.home_work,
+        //     sizeIcon: 20.0,
+        //     title: 'Logistiques',
+        //     style: bodyText1,
+        //     badge: Badge(
+        //       showBadge: (logistiqueCount >= 1) ? true : false,
+        //       badgeColor: Colors.teal,
+        //       badgeContent: Text('$logistiqueCount',
+        //           style: const TextStyle(fontSize: 10.0, color: Colors.white)),
+        //       child: const Icon(Icons.notifications),
+        //     ),
+        //     onTap: () {
+        //       Navigator.pushNamed(context, AdminRoutes.adminLogistique);
+        //       // Navigator.of(context).pop();
+        //     }),
+        // DrawerWidget(
+        //     selected: widget.pageCurrente == RhRoutes.rhPerformence,
+        //     icon: Icons.multiline_chart_sharp,
+        //     sizeIcon: 20.0,
+        //     title: 'Performences',
+        //     style: bodyText1,
+        //     onTap: () {
+        //       Navigator.pushNamed(context, RhRoutes.rhPerformence);
+        //     }),
+        // DrawerWidget(
+        //     selected: widget.pageCurrente == ArchiveRoutes.archives,
+        //     icon: Icons.archive,
+        //     sizeIcon: 20.0,
+        //     title: 'Archives',
+        //     style: bodyLarge!,
+        //     onTap: () {
+        //       Navigator.pushNamed(context, ArchiveRoutes.archives);
+        //       // Navigator.of(context).pop();
+        //     }),
       ],
     );
   }

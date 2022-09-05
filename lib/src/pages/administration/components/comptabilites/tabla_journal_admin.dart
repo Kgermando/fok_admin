@@ -115,24 +115,7 @@ class _TableJournalAdminState extends State<TableJournalAdmin> {
               return resolver<PlutoFilterTypeContains>() as PlutoFilterType;
             },
           ),
-        ),
-        rowColorCallback: (rowColorContext) {
-          if (rowColorContext.row.cells.entries.elementAt(6).value.value ==
-                  'Unapproved' ||
-              rowColorContext.row.cells.entries.elementAt(7).value.value ==
-                  'Unapproved') {
-            return Colors.red.shade700;
-          } else if (rowColorContext.row.cells.entries
-                      .elementAt(6)
-                      .value
-                      .value ==
-                  'Approved' &&
-              rowColorContext.row.cells.entries.elementAt(7).value.value ==
-                  'Approved') {
-            return Colors.green.shade700;
-          }
-          return Colors.white;
-        },
+        ), 
       ),
     );
   }

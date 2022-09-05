@@ -169,8 +169,10 @@ class _CustomAppbarState extends State<CustomAppbar> {
                   tooltip: 'Téléchargement',
                   onPressed: () {
                     setState(() {
-                      downloadNetworkSoftware(
-                          url: updateVersionList.last.urlUpdate);
+                      if (sumVersionCloud > sumVersion) {
+                        downloadNetworkSoftware(
+                            url: updateVersionList.last.urlUpdate);
+                      }
                     });
                   },
                   icon: (downloading)

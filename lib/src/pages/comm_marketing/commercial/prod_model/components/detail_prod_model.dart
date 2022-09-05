@@ -1,8 +1,5 @@
 import 'package:fokad_admin/src/api/exploitations/production_exp_api.dart';
-import 'package:fokad_admin/src/models/exploitations/production_model.dart';
-import 'package:fokad_admin/src/pages/comm_marketing/plateforms/desktop/prod_model_approbation_desktop.dart';
-import 'package:fokad_admin/src/pages/comm_marketing/plateforms/mobile/prod_model_approbation_mobile.dart';
-import 'package:fokad_admin/src/pages/comm_marketing/plateforms/tablet/prod_model_approbation_tablet.dart';
+import 'package:fokad_admin/src/models/exploitations/production_model.dart'; 
 import 'package:flutter/material.dart';
 import 'package:fokad_admin/src/api/auth/auth_api.dart';
 import 'package:fokad_admin/src/api/comm_marketing/commerciale/produit_model_api.dart';

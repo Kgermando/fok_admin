@@ -1,7 +1,6 @@
 import 'dart:async';
 
-import 'package:auto_size_text/auto_size_text.dart';
-import 'package:badges/badges.dart';
+import 'package:auto_size_text/auto_size_text.dart'; 
 import 'package:flutter/material.dart';
 import 'package:fokad_admin/src/api/notifications/departements/logistique_departement.dart';
 import 'package:fokad_admin/src/models/users/user_model.dart';

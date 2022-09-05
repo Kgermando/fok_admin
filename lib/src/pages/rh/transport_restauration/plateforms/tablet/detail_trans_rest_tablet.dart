@@ -62,7 +62,7 @@ class _DetailTransRestTabletState extends State<DetailTransRestTablet> {
       children: [
         pageDetail(widget.transportRestaurationModel),
         const SizedBox(height: p10),
-        approbationWidget(widget.transportRestaurationModel)
+        // approbationWidget(widget.transportRestaurationModel)
       ],
     ));
   }

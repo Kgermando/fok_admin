@@ -1,6 +1,4 @@
-import 'package:fokad_admin/src/pages/logistiques/plateforms/desktop/mobilier_approbation_desktop.dart';
-import 'package:fokad_admin/src/pages/logistiques/plateforms/mobile/mobilier_approbation_mobile.dart';
-import 'package:fokad_admin/src/pages/logistiques/plateforms/tablet/mobilier_approbation_tablet.dart';
+
 import 'package:fokad_admin/src/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:fokad_admin/src/api/auth/auth_api.dart';

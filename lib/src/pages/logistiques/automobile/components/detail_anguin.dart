@@ -1,6 +1,4 @@
-import 'package:fokad_admin/src/pages/logistiques/plateforms/desktop/engin_approbation_desktop.dart';
-import 'package:fokad_admin/src/pages/logistiques/plateforms/mobile/engin_approbation_mobile.dart';
-import 'package:fokad_admin/src/pages/logistiques/plateforms/tablet/engin_approbation_tablet.dart';
+
 import 'package:flutter/material.dart';
 import 'package:fokad_admin/src/api/auth/auth_api.dart';
 import 'package:fokad_admin/src/api/logistiques/anguin_api.dart';

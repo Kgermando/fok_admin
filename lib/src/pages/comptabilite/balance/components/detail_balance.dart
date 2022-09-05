@@ -1,9 +1,6 @@
 import 'package:fokad_admin/src/pages/comptabilite/balance/plateforms/desktop/balance_desktop.dart';
 import 'package:fokad_admin/src/pages/comptabilite/balance/plateforms/mobile/balance_mobile.dart';
 import 'package:fokad_admin/src/pages/comptabilite/balance/plateforms/tablet/balance_tablet.dart';
-import 'package:fokad_admin/src/pages/comptabilite/plateforms/desktop/balance_approbation_desktop.dart';
-import 'package:fokad_admin/src/pages/comptabilite/plateforms/mobile/balance_approbation_mobile.dart';
-import 'package:fokad_admin/src/pages/comptabilite/plateforms/tablet/balance_approbation_tablet.dart';
 import 'package:fokad_admin/src/utils/comptes_dropdown.dart';
 import 'package:flutter/material.dart';
 import 'package:fokad_admin/src/api/auth/auth_api.dart';

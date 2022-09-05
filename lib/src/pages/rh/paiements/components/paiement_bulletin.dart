@@ -110,29 +110,29 @@ class _PaiementBulletinState extends State<PaiementBulletin> {
                                           _key.currentState!.openDrawer())),
                             ],
                           ),
-                          // Expanded(child:
-                          //     LayoutBuilder(builder: (context, constraints) {
-                          //   if (constraints.maxWidth >= 1100) {
-                          //     return BulletinSalaireDesktop(
-                          //         departementsList: departementsList,
-                          //         ligneBudgetaireList: ligneBudgetaireList,
-                          //         user: user,
-                          //         paiementSalaireModel: paiementSalaireModel!);
-                          //   } else if (constraints.maxWidth < 1100 &&
-                          //       constraints.maxWidth >= 650) {
-                          //     return BulletinSalaireTablet(
-                          //         departementsList: departementsList,
-                          //         ligneBudgetaireList: ligneBudgetaireList,
-                          //         user: user,
-                          //         paiementSalaireModel: paiementSalaireModel!);
-                          //   } else {
-                          //     return BulletinSalaireMobile(
-                          //         departementsList: departementsList,
-                          //         ligneBudgetaireList: ligneBudgetaireList,
-                          //         user: user,
-                          //         paiementSalaireModel: paiementSalaireModel!);
-                          //   }
-                          // }))
+                          Expanded(child:
+                              LayoutBuilder(builder: (context, constraints) {
+                            if (constraints.maxWidth >= 1100) {
+                              return BulletinSalaireDesktop(
+                                  departementsList: departementsList,
+                                  ligneBudgetaireList: ligneBudgetaireList,
+                                  user: user,
+                                  paiementSalaireModel: paiementSalaireModel!);
+                            } else if (constraints.maxWidth < 1100 &&
+                                constraints.maxWidth >= 650) {
+                              return BulletinSalaireTablet(
+                                  departementsList: departementsList,
+                                  ligneBudgetaireList: ligneBudgetaireList,
+                                  user: user,
+                                  paiementSalaireModel: paiementSalaireModel!);
+                            } else {
+                              return BulletinSalaireMobile(
+                                  departementsList: departementsList,
+                                  ligneBudgetaireList: ligneBudgetaireList,
+                                  user: user,
+                                  paiementSalaireModel: paiementSalaireModel!);
+                            }
+                          }))
                         ],
                       );
                     } else {

@@ -1,6 +1,4 @@
-import 'package:fokad_admin/src/pages/comptabilite/plateforms/desktop/bilan_approbation_desktop.dart';
-import 'package:fokad_admin/src/pages/comptabilite/plateforms/mobile/bilan_approbation_mobile.dart';
-import 'package:fokad_admin/src/pages/comptabilite/plateforms/tablet/bilan_approbation_tablet.dart';
+
 import 'package:fokad_admin/src/utils/comptes_dropdown.dart';
 import 'package:flutter/material.dart';
 import 'package:fokad_admin/src/api/auth/auth_api.dart';

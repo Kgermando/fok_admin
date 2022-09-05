@@ -1,6 +1,3 @@
-import 'package:fokad_admin/src/pages/comm_marketing/plateforms/desktop/succursale_approbation_desktop.dart';
-import 'package:fokad_admin/src/pages/comm_marketing/plateforms/mobile/succursale_approbation_mobile.dart';
-import 'package:fokad_admin/src/pages/comm_marketing/plateforms/tablet/succursale_approbation_tablet.dart';
 import 'package:fokad_admin/src/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:fokad_admin/src/api/auth/auth_api.dart';

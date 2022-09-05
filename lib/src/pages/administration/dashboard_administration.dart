@@ -33,7 +33,6 @@ import 'package:fokad_admin/src/models/finances/banque_model.dart';
 import 'package:fokad_admin/src/models/finances/caisse_model.dart';
 import 'package:fokad_admin/src/models/finances/creances_model.dart';
 import 'package:fokad_admin/src/models/finances/dette_model.dart';
-import 'package:fokad_admin/src/models/finances/fin_exterieur_model.dart';
 import 'package:fokad_admin/src/models/rh/paiement_salaire_model.dart';
 import 'package:fokad_admin/src/models/rh/transport_restauration_model.dart';
 import 'package:fokad_admin/src/navigation/drawer/drawer_menu.dart';

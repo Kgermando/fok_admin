@@ -1,8 +1,5 @@
 import 'dart:async';
-
-import 'package:fokad_admin/src/pages/devis/plateforms/desktop/devis_approbation_desktop.dart';
-import 'package:fokad_admin/src/pages/devis/plateforms/mobile/devis_approbation_mobile.dart';
-import 'package:fokad_admin/src/pages/devis/plateforms/tablet/devis_approbation_tablet.dart';
+ 
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

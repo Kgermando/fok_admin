@@ -1,6 +1,4 @@
-import 'package:fokad_admin/src/pages/logistiques/plateforms/desktop/immobilier_approbation_desktop.dart';
-import 'package:fokad_admin/src/pages/logistiques/plateforms/mobile/immobilier_approbation_mobile.dart';
-import 'package:fokad_admin/src/pages/logistiques/plateforms/tablet/immobilier_approbation_tablet.dart';
+
 import 'package:fokad_admin/src/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:fokad_admin/src/api/auth/auth_api.dart';

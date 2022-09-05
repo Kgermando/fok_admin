@@ -67,7 +67,7 @@ class _BulletinSalaireMobileState extends State<BulletinSalaireMobile> {
       children: [
         bulletinPaieWidget(widget.paiementSalaireModel),
         const SizedBox(height: p10),
-        approbationWidget(widget.paiementSalaireModel)
+        // approbationWidget(widget.paiementSalaireModel)
       ],
     ));
   }

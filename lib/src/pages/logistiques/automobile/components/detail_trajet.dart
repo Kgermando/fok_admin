@@ -1,6 +1,4 @@
-import 'package:fokad_admin/src/pages/logistiques/plateforms/desktop/trajet_approbation_desktop.dart';
-import 'package:fokad_admin/src/pages/logistiques/plateforms/mobile/trajet_approbation_mobile.dart';
-import 'package:fokad_admin/src/pages/logistiques/plateforms/tablet/trajet_approbation_tablet.dart';
+
 import 'package:flutter/material.dart';
 import 'package:fokad_admin/src/api/auth/auth_api.dart';
 import 'package:fokad_admin/src/api/logistiques/trajet_api.dart';

@@ -1,8 +1,5 @@
-import 'package:fokad_admin/src/pages/budgets/plateforms/destop/budget_approbation_desktop.dart';
-import 'package:fokad_admin/src/pages/budgets/plateforms/destop/detail_departement_budget_desktop.dart';
-import 'package:fokad_admin/src/pages/budgets/plateforms/mobile/budget_approbation_mobile.dart';
-import 'package:fokad_admin/src/pages/budgets/plateforms/mobile/detail_departement_budget_mobile.dart';
-import 'package:fokad_admin/src/pages/budgets/plateforms/tablet/budget_approbation_tablet.dart';
+import 'package:fokad_admin/src/pages/budgets/plateforms/destop/detail_departement_budget_desktop.dart'; 
+import 'package:fokad_admin/src/pages/budgets/plateforms/mobile/detail_departement_budget_mobile.dart'; 
 import 'package:fokad_admin/src/pages/budgets/plateforms/tablet/detail_departement_budget_tablet.dart';
 import 'package:flutter/material.dart';
 import 'package:fokad_admin/src/api/auth/auth_api.dart';

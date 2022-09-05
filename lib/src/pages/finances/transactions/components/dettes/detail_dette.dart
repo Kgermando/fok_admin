@@ -1,8 +1,6 @@
-import 'package:fokad_admin/src/pages/finances/transactions/plateforms/desktop/dette_approbation_desktop.dart';
+
 import 'package:fokad_admin/src/pages/finances/transactions/plateforms/desktop/total_restant_dette_creance_desktop.dart';
-import 'package:fokad_admin/src/pages/finances/transactions/plateforms/mobile/dette_approbation_mobile.dart';
 import 'package:fokad_admin/src/pages/finances/transactions/plateforms/mobile/total_restant_dette_creance_mobile.dart';
-import 'package:fokad_admin/src/pages/finances/transactions/plateforms/tablet/dette_approbation_tablet.dart';
 import 'package:fokad_admin/src/pages/finances/transactions/plateforms/tablet/total_restant_dette_creance_tablet.dart';
 import 'package:fokad_admin/src/widgets/title_widget.dart';
 import 'package:flutter/material.dart';

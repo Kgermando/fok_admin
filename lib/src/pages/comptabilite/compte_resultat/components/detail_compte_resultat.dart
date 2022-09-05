@@ -1,6 +1,4 @@
-import 'package:fokad_admin/src/pages/comptabilite/plateforms/desktop/compte_resultat_approbation_desktop.dart';
-import 'package:fokad_admin/src/pages/comptabilite/plateforms/mobile/compte_resultat_approbation_mobile.dart';
-import 'package:fokad_admin/src/pages/comptabilite/plateforms/tablet/compte_resultat_approbation_tablet.dart';
+
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:fokad_admin/src/api/auth/auth_api.dart';
